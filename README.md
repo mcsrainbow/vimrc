@@ -1,5 +1,3 @@
-sudo yum install vim ctags
-
-cp .vimrc ~/
-
-cp -r .vim ~/
+sudo yum install vim ctags<br />
+cp .vimrc ~/<br />
+cp -r .vim ~/<br />
