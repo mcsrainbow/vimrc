@@ -75,14 +75,14 @@ let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
 let Tlist_Show_One_File = 1                    " 只显示当前文件的tags
 let Tlist_Exit_OnlyWindow = 1                  " 如果Taglist窗口是最后一个窗口则退出Vim
 
-"通过快捷键<F12>打开Tlist
-nnoremap <silent> <F12> :Tlist<CR>
+"通过快捷键<F10>打开Tlist
+nnoremap <silent> <F10> :Tlist<CR>
 
-"通过快捷键<F11>打开NERDTree
-nnoremap <silent> <F11> :NERDTreeToggle<CR>
+"通过快捷键<F9>打开NERDTree
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
-"通过快捷键<F9>切换窗口
-nnoremap <silent> <F9> <C-W>w
+"通过快捷键<F8>切换窗口
+nnoremap <silent> <F8> <C-W>w
 
 "Python语法结构自动补全 [pydiction]
 filetype plugin on
