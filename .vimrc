@@ -21,12 +21,12 @@ set history=400              " 历史操作命令，默认20
 set term=xterm-color         " 指定终端
 set guifont=Monaco:h10       " 字体&&字号
 set tabstop=4                " 设置Tab键的宽度
-set shiftwidth=4             " 换行时行间交错使用4个空格
+"set shiftwidth=4             " 换行时行间交错使用4个空格
 set autoindent               " 自动对齐
 set backspace=2              " 设置退格键可用
-set cindent shiftwidth=4     " 自动缩进4空格
-set smartindent              " 智能自动缩进
-set ai                       " 设置自动缩进
+"set cindent shiftwidth=4     " 自动缩进4空格
+"set smartindent              " 智能自动缩进
+"set ai                       " 设置自动缩进
 set nu                       " 显示行号
 set showmatch                " 显示括号配对情况
 "set mouse=a                 " 启用鼠标
@@ -97,30 +97,30 @@ let g:miniBufExplModSelTarget = 1
 
 ""引号,括号自动匹配 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:inoremap ( ()<ESC>i
-:inoremap ) <c-r>=ClosePair(')')<CR>
-
-:inoremap { {}<ESC>i
-:inoremap } <c-r>=ClosePair('}')<CR>
-
-:inoremap [ []<ESC>i
-:inoremap ] <c-r>=ClosePair(']')<CR>
-
-":inoremap < <><ESC>i
-":inoremap > <c-r>=ClosePair('>')<CR>
-
-:inoremap " ""<ESC>i
-:inoremap ' ''<ESC>i
-
-:inoremap ` ``<ESC>i
-
-function ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-    else
-        return a:char
-    endif
-endf
+":inoremap ( ()<ESC>i
+":inoremap ) <c-r>=ClosePair(')')<CR>
+"
+":inoremap { {}<ESC>i
+":inoremap } <c-r>=ClosePair('}')<CR>
+"
+":inoremap [ []<ESC>i
+":inoremap ] <c-r>=ClosePair(']')<CR>
+"
+"":inoremap < <><ESC>i
+"":inoremap > <c-r>=ClosePair('>')<CR>
+"
+":inoremap " ""<ESC>i
+":inoremap ' ''<ESC>i
+"
+":inoremap ` ``<ESC>i
+"
+"function ClosePair(char)
+"    if getline('.')[col('.') - 1] == a:char
+"        return "\<Right>"
+"    else
+"        return a:char
+"    endif
+"endf
 
 
 ""自定义函数
@@ -145,4 +145,3 @@ endf
 "映射到快捷键
 map <F2> <Esc>:call MyTitle()<CR><Esc>
 map <F3> <Esc>:call MyMain()<CR><Esc>
-
