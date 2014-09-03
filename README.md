@@ -1,15 +1,15 @@
-1. Install packages
-`sudo yum install vim git ctags`
+1. Install packages<br>
+`sudo yum install vim git ctags`<br>
 
-2. Install Vundle package
-`git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+2. Install Vundle package<br>
+`git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`<br>
 
-3. Copy the configuration file and color schemes
-`cp vimrc ~/.vimrc`
-`cp -r vim ~/.vim`
+3. Copy the configuration file and color schemes<br>
+`cp vimrc ~/.vimrc`<br>
+`cp -r vim ~/.vim`<br>
 
-4. Install Plugins
-`vim +PluginInstall +qall`
+4. Install Plugins<br>
+`vim +PluginInstall +qall`<br>
 
-5. Comment out Plugins in .vimrc then Remove Plugins
-`vim +PluginClean +qall`
+5. Comment out Plugins in .vimrc then Remove Plugins<br>
+`vim +PluginClean +qall`<br>
