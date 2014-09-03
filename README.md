@@ -16,6 +16,6 @@ Instruction
 5. Comment out Plugins in .vimrc then Remove Plugins<br>
 `vim +PluginClean +qall`<br>
 
-ScreenShot
+Screenshot
 ---
 ![image](screenshot.png)
