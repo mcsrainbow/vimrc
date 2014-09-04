@@ -105,8 +105,8 @@ nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 "通过快捷键<F8>切换窗口
 nnoremap <silent> <F8> <C-W>w
 
-"通过快捷键<F3>启用Pyflakes
-"autocmd FileType python map <buffer> <F3> :call Pyflakes()<CR>
+"通过快捷键<F7>启用Pyflakes
+"autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 
 "Python语法结构自动补全[pydiction]
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
