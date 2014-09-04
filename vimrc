@@ -20,6 +20,7 @@ Plugin 'vim-scripts/minibufexpl.vim'   "多文件编辑
 Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
 Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 Plugin 'vim-scripts/autocomplpop'      "文本内容自动补全
+"Plugin 'vim-scripts/pyflakes'         "实时检查python代码语法
 "Plugin 'chase/vim-ansible-yaml'        "Ansible语法高亮插件
 "Plugin 'saltstack/salt-vim'            "Salt语法高亮插件
 "Plugin 'glench/vim-jinja2-syntax'      "Jinja2语法高亮插件
@@ -48,7 +49,7 @@ set backspace=2               "设置退格键可用
 set showmatch                "显示括号配对情况
 "set mouse=a                  "启用鼠标
 "set ruler                    "右下角显示光标位置的状态行
-"set incsearch                "查找book时，当输入/b时会自动找到，开启实时搜索功能
+"set incsearch                "开启实时搜索功能
 set hlsearch                 "开启高亮显示搜索结果
 "set smartcase                "开启智能大小写搜索
 "set ignorecase               "搜索时忽略大小写
@@ -59,6 +60,7 @@ set hidden                   "允许在有未保存的修改时切换缓冲区
 "set wildmenu                 "启动具有菜单项提示的命令行自动完成
 "set cmdheight=2              "设置命令行高度
 "set autoread                 "自动读取被外部修改的文件内容
+set nowrap                    "不自动换行
 
 "优化退格键的行为
 set backspace=eol,start,indent
@@ -84,8 +86,8 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
 "解决Consle乱码输出问题
-"language messages zh_CN.utf-8
-language messages en_US.utf-8
+language messages zh_CN.utf-8
+"language messages en_US.utf-8
 
 ""插件配置(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,6 +105,9 @@ nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 
 "通过快捷键<F8>切换窗口
 nnoremap <silent> <F8> <C-W>w
+
+"通过快捷键<F3>启用Pyflakes
+"autocmd FileType python map <buffer> <F3> :call Pyflakes()<CR>
 
 "Python语法结构自动补全[pydiction]
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
