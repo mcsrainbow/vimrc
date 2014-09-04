@@ -60,7 +60,7 @@ set hidden                   "允许在有未保存的修改时切换缓冲区
 "set wildmenu                 "启动具有菜单项提示的命令行自动完成
 "set cmdheight=2              "设置命令行高度
 "set autoread                 "自动读取被外部修改的文件内容
-set nowrap                    "不自动换行
+set nowrap                   "不自动换行
 
 "优化退格键的行为
 set backspace=eol,start,indent

@@ -2,6 +2,7 @@ Instruction
 ---
 1. Install packages<br>
 `sudo yum install vim git ctags`<br>
+`sudo pip install pyflakes`(optional)<br>
 
 2. Install Vundle package<br>
 `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`<br>
