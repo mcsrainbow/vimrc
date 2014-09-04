@@ -67,8 +67,9 @@ set backspace=indent,eol,start
 "每行超过80个的字符用下划线标示
 au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
 
-"状态栏显示
-set statusline=%F%m\ %r,%Y,%{&fileformat}\ \ \ ASCII=\%b,HEX=\%B\ \ \ Row=%l,Column=%c%V\ %p%%\ \ \ [\ %L\ lines\ in\ all\ ] 
+"自定义状态栏显示(文件名称,文件格式,文件类型,光标字符ASCII与16进制值,光标所在行号和列号,文件总行数)
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+"set laststatus=2             "总是显示状态栏
 
 "设置默认编码
 set fenc=utf-8
