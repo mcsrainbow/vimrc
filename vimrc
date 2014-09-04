@@ -35,11 +35,13 @@ colorscheme inkpot           "配色模式inkpot
 "colorscheme SolarizedDark    "配色模式SolarizedDark
 "colorscheme jellybeans       "配色模式jellybeans
 set history=400              "历史操作命令，默认20
+set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度
+set smarttab                 "智能使用Tab键
 "set shiftwidth=4             "换行时行间交错使用4个空格
 "set autoindent               "自动对齐
-set backspace=2              "设置退格键可用
 "set cindent shiftwidth=4     "自动缩进4空格
+set backspace=2               "设置退格键可用
 "set smartindent              "智能自动缩进
 "set ai                       "设置自动缩进
 "set nu                       "显示行号
@@ -48,21 +50,26 @@ set showmatch                "显示括号配对情况
 "set ruler                    "右下角显示光标位置的状态行
 "set incsearch                "查找book时，当输入/b时会自动找到，开启实时搜索功能
 set hlsearch                 "开启高亮显示搜索结果
+"set smartcase                "开启智能大小写搜索
+"set ignorecase               "搜索时忽略大小写
 "set nowrapscan               "搜索到文件两端时不重新搜索
 set vb t_vb=                 "关闭提示音
 set cursorline               "突出显示当前行
 set hidden                   "允许在有未保存的修改时切换缓冲区
+"set wildmenu                 "启动具有菜单项提示的命令行自动完成
+"set cmdheight=2              "设置命令行高度
+"set autoread                 "自动读取被外部修改的文件内容
 
-"显示Tab符,使用高亮竖线代替
+"优化退格键的行为
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+"显示Tab符并使用高亮竖线代替
 set list
 set listchars=tab:\|\ ,
-set expandtab
 
 syntax enable                "打开语法高亮
 syntax on                    "开启文件类型侦测
-
-"设置backspace
-set backspace=indent,eol,start
 
 "每行超过80个的字符用下划线标示
 au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
@@ -77,8 +84,8 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
 "解决Consle乱码输出问题
-language messages zh_CN.utf-8
-"language messages en_US.utf-8
+"language messages zh_CN.utf-8
+language messages en_US.utf-8
 
 ""插件配置(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
