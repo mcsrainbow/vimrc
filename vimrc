@@ -40,7 +40,7 @@ set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度
 set smarttab                 "智能使用Tab键
 "set shiftwidth=4             "换行时行间交错使用4个空格
-"set autoindent               "自动缩进
+set autoindent               "自动缩进
 "set cindent shiftwidth=4     "自动缩进4空格
 "set smartindent              "智能缩进
 set backspace=2               "设置退格键可用
@@ -96,10 +96,10 @@ let Tlist_File_Fold_Auto_Close = 1             "自动折叠
 let Tlist_Show_One_File = 1                    "只显示当前文件的tags
 let Tlist_Exit_OnlyWindow = 1                  "如果Taglist窗口是最后一个窗口则退出Vim
 
-"通过快捷键<F10>打开Taglist
+"通过快捷键<F10>开关Taglist
 nnoremap <silent> <F10> :Tlist<CR>
 
-"通过快捷键<F9>打开NERDTree
+"通过快捷键<F9>开关NERDTree
 nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 
 "通过快捷键<F8>切换窗口
@@ -107,6 +107,9 @@ nnoremap <silent> <F8> <C-W>w
 
 "通过快捷键<F7>启用Pyflakes
 "autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
+
+"通过快捷键<F6>开关粘贴模式临时关闭自动缩进等功能方便从外部复制代码
+nnoremap <silent> <F6> :pastetoggle<CR>
 
 "Python语法结构自动补全[pydiction]
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
