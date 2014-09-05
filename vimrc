@@ -109,7 +109,7 @@ nnoremap <silent> <F8> <C-W>w
 "autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 
 "通过快捷键<F6>开关粘贴模式临时关闭自动缩进等功能方便从外部复制代码
-nnoremap <silent> <F6> :pastetoggle<CR>
+set pastetoggle=<F6>
 
 "Python语法结构自动补全[pydiction]
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
