@@ -30,6 +30,13 @@ call vundle#end()
 "针对不同的文件类型加载对应的插件并允许开启自动补全
 filetype plugin indent on
 
+""快捷键选项
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"u                            "撤销最后的改动
+"CTRL+r                       "重做最后的改动
+"CTRL+v                       "块编辑模式[删除x][插入I][退出ESC]
+"Ctrl+x Ctrl+f                "文件路径补全
+
 ""配置选项(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot           "配色模式inkpot
@@ -47,7 +54,7 @@ set backspace=2               "设置退格键可用
 "set nu                       "显示行号
 set showmatch                "显示括号配对情况
 "set mouse=a                  "启用鼠标
-"set ruler                    "右下角显示光标位置的状态行
+"set ruler                    "启用状态栏标尺
 "set incsearch                "开启实时搜索功能
 set hlsearch                 "开启高亮显示搜索结果
 "set smartcase                "开启智能大小写搜索
@@ -55,11 +62,17 @@ set hlsearch                 "开启高亮显示搜索结果
 "set nowrapscan               "搜索到文件两端时不重新搜索
 set vb t_vb=                 "关闭提示音
 set cursorline               "突出显示当前行
+"set cursorcolumn             "突出显示当前列
 set hidden                   "允许在有未保存的修改时切换缓冲区
-"set wildmenu                 "启动具有菜单项提示的命令行自动完成
+"set wildmenu                 "启动增强模式下的命令行自动完成
 "set cmdheight=2              "设置命令行高度
 "set autoread                 "自动读取被外部修改的文件内容
+"set autowrite                "开启自动保存
 set nowrap                   "不自动换行
+"set backup                   "自动备份修改前的文件,源文件名加~
+"set noswapfile               "编辑时不产生交换文件
+"set autochdir                "自动切换当前目录为文件所在的目录
+"set equalalways              "分割窗口时保持相等的宽和高
 
 "优化退格键的行为
 set backspace=eol,start,indent
@@ -78,6 +91,8 @@ au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vi
 "自定义状态栏显示(文件名称,文件格式,文件类型,光标字符ASCII与16进制值,光标所在行号和列号,文件总行数)
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 "set laststatus=2             "总是显示状态栏
+
+set fileformats=unix,dos,mac "自动识别文件格式
 
 "设置默认编码
 set fenc=utf-8
