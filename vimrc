@@ -42,7 +42,7 @@ filetype plugin indent on
 colorscheme inkpot           "配色模式inkpot
 "colorscheme SolarizedDark    "配色模式SolarizedDark
 "colorscheme jellybeans       "配色模式jellybeans
-set history=400              "历史操作命令，默认20
+set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度
 set smarttab                 "智能使用Tab键
@@ -69,7 +69,7 @@ set hidden                   "允许在有未保存的修改时切换缓冲区
 "set autoread                 "自动读取被外部修改的文件内容
 "set autowrite                "开启自动保存
 set nowrap                   "不自动换行
-"set backup                   "自动备份修改前的文件,源文件名加~
+"set backup                   "自动备份修改前的文件为源文件名加~
 "set noswapfile               "编辑时不产生交换文件
 "set autochdir                "自动切换当前目录为文件所在的目录
 "set equalalways              "分割窗口时保持相等的宽和高
