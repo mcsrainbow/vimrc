@@ -21,7 +21,6 @@ Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
 Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 Plugin 'vim-scripts/autocomplpop'      "文本内容自动补全
 "Plugin 'vim-scripts/pyflakes'          "实时检查python代码语法
-"Plugin 'saltstack/salt-vim'            "Salt语法高亮插件
 
 "Vundle插件管理区域结束标签
 call vundle#end()
