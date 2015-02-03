@@ -42,7 +42,7 @@ colorscheme inkpot           "配色模式inkpot
 set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度
-set smarttab                 "智能使用Tab键
+"set smarttab                 "智能使用Tab键
 "set shiftwidth=4             "换行时行间交错使用4个空格
 set autoindent               "自动缩进
 "set cindent shiftwidth=4     "自动缩进4空格
