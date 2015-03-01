@@ -21,8 +21,9 @@ Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
 Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 Plugin 'vim-scripts/autocomplpop'      "文本内容自动补全
 "Plugin 'vim-scripts/pyflakes'          "实时检查python代码语法
-"Plugin 'chase/vim-ansible-yaml'        "Ansible代码语法高亮
+"Plugin 'puppetlabs/puppet-syntax-vim'  "Puppet代码语法高亮
 "Plugin 'saltstack/salt-vim'            "Salt代码语法高亮
+"Plugin 'chase/vim-ansible-yaml'        "Ansible代码语法高亮
 
 "Vundle插件管理区域结束标签
 call vundle#end()
