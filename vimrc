@@ -182,6 +182,6 @@ let g:miniBufExplModSelTarget = 1
 "    call append(line(".")+3, "    main()")
 "endf
 "
-""映射到快捷键
+"映射到快捷键
 "map <F2> <Esc>:call MyInfo()<CR><Esc>
 "map <F3> <Esc>:call MyMain()<CR><Esc>
