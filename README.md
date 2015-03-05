@@ -17,6 +17,8 @@ Instruction
 5. Comment out Plugins in .vimrc then Remove Plugins<br>
 `vim +PluginClean +qall`<br>
 
+6. Turn on/off paste mode by F6 when you want to disable all plugins or paste something.<br>
+
 Screenshot
 ---
 ![image](screenshot.png)

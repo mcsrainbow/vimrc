@@ -166,22 +166,22 @@ let g:miniBufExplModSelTarget = 1
 ""自定义函数(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "加载语法模板和作者,时间信息[非插入模式]
-function MyInfo()
-    call append(0, "#!/usr/bin/env python")
-    call append(1, "#-*- coding:utf-8 -*-")
-    call append(2, "")
-    call append(3, "# FileName: ".expand("%"))
-    call append(4, "# Date: ".strftime("%c"))
-    call append(5, "# Author: Dong Guo")
-endf
-
-function MyMain() 
-    call append(line("."),   "def main():")
-    call append(line(".")+1, "")
-    call append(line(".")+2, "if __name__=='__main__':")
-    call append(line(".")+3, "    main()")
-endf
-
-"映射到快捷键
-map <F2> <Esc>:call MyInfo()<CR><Esc>
-map <F3> <Esc>:call MyMain()<CR><Esc>
+"function MyInfo()
+"    call append(0, "#!/usr/bin/env python")
+"    call append(1, "#-*- coding:utf-8 -*-")
+"    call append(2, "")
+"    call append(3, "# FileName: ".expand("%"))
+"    call append(4, "# Date: ".strftime("%c"))
+"    call append(5, "# Author: Dong Guo")
+"endf
+"
+"function MyMain() 
+"    call append(line("."),   "def main():")
+"    call append(line(".")+1, "")
+"    call append(line(".")+2, "if __name__=='__main__':")
+"    call append(line(".")+3, "    main()")
+"endf
+"
+""映射到快捷键
+"map <F2> <Esc>:call MyInfo()<CR><Esc>
+"map <F3> <Esc>:call MyMain()<CR><Esc>
