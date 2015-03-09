@@ -162,19 +162,39 @@ let g:miniBufExplModSelTarget = 1
 "    endif
 "endf
 
-
 ""自定义函数(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"加载语法模板和作者,时间信息[非插入模式]
-"function MyInfo()
+"初始化并加载作者,时间信息
+"function CreateInfo()
 "    call append(0, "#!/usr/bin/env python")
 "    call append(1, "#-*- coding:utf-8 -*-")
 "    call append(2, "")
-"    call append(3, "# FileName: ".expand("%"))
-"    call append(4, "# Date: ".strftime("%c"))
-"    call append(5, "# Author: Dong Guo")
+"    call append(3, "# Description: ")
+"    call append(4, "# Author: Dong Guo")
+"    call append(5, "# Last modified: ".strftime("%F %H:%M"))
+"    call append(6, "")
 "endf
 "
+"自动更新时间信息
+"function UpdateInfo()
+"    execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M")'
+"endf
+"
+"检测并执行创建或更新[非插入模式]
+"function MyInfo()
+"    let n = 1
+"    while n < 10
+"        let line = getline(n)
+"        if line =~ '^\#\s*\S*Last\smodified:\S*.*$'
+"            call UpdateInfo()
+"            return
+"        endif
+"        let n = n + 1
+"    endwhile
+"    call CreateInfo()
+"endf
+"
+"初始化并加载主函数模板[非插入模式]
 "function MyMain() 
 "    call append(line("."),   "def main():")
 "    call append(line(".")+1, "")
@@ -182,6 +202,6 @@ let g:miniBufExplModSelTarget = 1
 "    call append(line(".")+3, "    main()")
 "endf
 "
-"映射到快捷键
+"映射到快捷键F2,F3
 "map <F2> <Esc>:call MyInfo()<CR><Esc>
 "map <F3> <Esc>:call MyMain()<CR><Esc>
