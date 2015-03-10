@@ -171,13 +171,13 @@ let g:miniBufExplModSelTarget = 1
 "    call append(2, "")
 "    call append(3, "# Description: ")
 "    call append(4, "# Author: Dong Guo")
-"    call append(5, "# Last modified: ".strftime("%F %H:%M"))
+"    call append(5, "# Last modified: ".strftime("%F %H:%M %Z"))
 "    call append(6, "")
 "endf
 "
 "自动更新时间信息
 "function UpdateInfo()
-"    execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M")'
+"    execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M %Z")'
 "endf
 "
 "检测并执行创建或更新[非插入模式]
