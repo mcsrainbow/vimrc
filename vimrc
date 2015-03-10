@@ -219,9 +219,12 @@ let g:miniBufExplModSelTarget = 1
 "    call append(line(".")+20, "    if len(sys.argv) < 2:")
 "    call append(line(".")+21, "        os.system(__file__ + ' -h')")
 "    call append(line(".")+22, "        return 2")
-"    call append(line(".")+23, "")
-"    call append(line(".")+24, "if __name__=='__main__':")
-"    call append(line(".")+25, "    sys.exit(main())")
+"    call append(line(".")+23, "    ")
+"    call append(line(".")+24, "    opts = parse_opts()")
+"    call append(line(".")+25, "    return 0")
+"    call append(line(".")+26, "")
+"    call append(line(".")+27, "if __name__=='__main__':")
+"    call append(line(".")+28, "    sys.exit(main())")
 "endf
 "
 "映射到快捷键F2,F3
