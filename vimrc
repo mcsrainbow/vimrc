@@ -41,18 +41,18 @@ set tabstop=4                "1 tab == 4 spaces
 "set smarttab                 "Be smart when <Tab> in front of a line inserts blanks
 "set shiftwidth=4             "Number of spaces to use for each step of (auto)indent
 set autoindent               "Copy indent from current line when starting a new line
-"set cindent shiftwidth=4    "The indent is counted in spaces, the value of 'tabstop' is relevant
+"set cindent shiftwidth=4     "The indent is counted in spaces, the value of 'tabstop' is relevant
 "set smartindent              "Do smart autoindenting when starting a new line
-set backspace=2               "Enable the use of the <BS>
-set nu                       "Show line numbers
-set showmatch                 "Show matching brackets when text indicator is over them
+set backspace=2              "Enable the use of the <BS>
+"set nu                       "Show line numbers
+set showmatch                "Show matching brackets when text indicator is over them
 "set mouse=a                  "Enable the use of the mouse
 "set ruler                    "Always show current position
 "set incsearch                "Makes search act like search in modern browsers
 set hlsearch                 "Highlight search results
-"set smartcase               "When searching try to be smart about cases
-"set ignorecase              "Ignore case when searching
-"set nowrapscan              "Do not wrap around when searching
+"set smartcase                "When searching try to be smart about cases
+"set ignorecase               "Ignore case when searching
+"set nowrapscan               "Do not wrap around when searching
 set vb t_vb=                 "Turn off visual bell
 set cursorline               "Highlight the current line
 "set cursorcolumn             "Highlight the current column
