@@ -1,141 +1,133 @@
-""使用Vundle进行插件管理
+""Use Vundle to manage vim plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"配置Vundle所需参数
-set nocompatible              "关闭vi兼容模式
-filetype off                  "关闭文件类型检测
+"Compatible settings
+set nocompatible
+filetype off
 
-"配置Vundle环境变量
+"Environment setting
 set rtp+=~/.vim/bundle/Vundle.vim
 
-"Vundle插件管理区域开始标签
+"Vundle BEGIN
 call vundle#begin()
 
-"使用Vundle管理自身插件
+"Use Vundle to manage itself
 Plugin 'gmarik/Vundle.vim'
 
-"使用Vundle管理位于GitHub上的插件(可选)
-Plugin 'scrooloose/nerdtree'           "树形目录
-Plugin 'jistr/vim-nerdtree-tabs'       "为树形目录提供Tab支持
-Plugin 'vim-scripts/minibufexpl.vim'   "多文件编辑
-Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
-Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
-Plugin 'vim-scripts/autocomplpop'      "文本内容自动补全
-"Plugin 'vim-scripts/pyflakes'          "实时检查python代码语法
-"Plugin 'puppetlabs/puppet-syntax-vim'  "Puppet代码语法高亮
-"Plugin 'saltstack/salt-vim'            "Salt代码语法高亮
-"Plugin 'chase/vim-ansible-yaml'        "Ansible代码语法高亮
+"Use Vundle to manage vim plugins which on GitHub(optional)
+Plugin 'scrooloose/nerdtree'           "NERDTree
+Plugin 'jistr/vim-nerdtree-tabs'       "NERDTree Tabs
+Plugin 'vim-scripts/minibufexpl.vim'   "Minibufexpl
+Plugin 'vim-scripts/taglist.vim'       "Based on ctags
+Plugin 'vim-scripts/pydiction'         "Pydiction
+Plugin 'vim-scripts/autocomplpop'      "Autocomplpop
+"Plugin 'vim-scripts/pyflakes'          "Pyflakes
+"Plugin 'puppetlabs/puppet-syntax-vim'  "Puppet Syntax 
+"Plugin 'saltstack/salt-vim'            "Salt Syntax
+"Plugin 'chase/vim-ansible-yaml'        "Ansible Syntax
 
-"Vundle插件管理区域结束标签
+"Vundle END
 call vundle#end()
-"针对不同的文件类型加载对应的插件并允许开启自动补全
+"Turn on plugins
 filetype plugin indent on
 
-""快捷键选项
+"Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"u                            "撤销最后的改动
-"CTRL+r                       "重做最后的改动
-"CTRL+v                       "块编辑模式[删除x][插入I][退出ESC]
-"CTRL+x CTRL+f                "文件路径补全
+colorscheme inkpot           "The currently active color scheme
+"colorscheme SolarizedDark
+"colorscheme jellybeans
+set history=400              "The command-lines that you enter are remembered in a history table
+set expandtab                "Use spaces instead of tabs
+set tabstop=4                "1 tab == 4 spaces
+"set smarttab                 "Be smart when <Tab> in front of a line inserts blanks
+"set shiftwidth=4             "Number of spaces to use for each step of (auto)indent
+set autoindent               "Copy indent from current line when starting a new line
+"set cindent shiftwidth=4    "The indent is counted in spaces, the value of 'tabstop' is relevant
+"set smartindent              "Do smart autoindenting when starting a new line
+set backspace=2               "Enable the use of the <BS>
+set nu                       "Show line numbers
+set showmatch                 "Show matching brackets when text indicator is over them
+"set mouse=a                  "Enable the use of the mouse
+"set ruler                    "Always show current position
+"set incsearch                "Makes search act like search in modern browsers
+set hlsearch                 "Highlight search results
+"set smartcase               "When searching try to be smart about cases
+"set ignorecase              "Ignore case when searching
+"set nowrapscan              "Do not wrap around when searching
+set vb t_vb=                 "Turn off visual bell
+set cursorline               "Highlight the current line
+"set cursorcolumn             "Highlight the current column
+set hidden                   "A buffer becomes hidden when it is abandoned
+"set wildmenu                 "Turn on the wild menu
+"set cmdheight=2              "Number of screen lines to use for the command-line
+"set autoread                 "Set to auto read when a file is changed from the outside
+"set autowrite                "Auto saves changes when quitting and swiching buffer
+set nowrap                   "Do not wrap lines
+"set backup                   "Keep a backup file with suffix ~
+"set noswapfile               "Use a swapfile for the buffer
+"set autochdir                "Change the current working directory
+"set equalalways              "Makes all the windows the same size after a window is split or closed
 
-""配置选项(可选)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme inkpot           "配色模式inkpot
-"colorscheme SolarizedDark    "配色模式SolarizedDark
-"colorscheme jellybeans       "配色模式jellybeans
-set history=400              "增加历史操作命令条数，默认20
-set expandtab                "使用空格替换Tab符
-set tabstop=4                "设置Tab键的宽度
-"set smarttab                 "智能使用Tab键
-"set shiftwidth=4             "换行时行间交错使用4个空格
-set autoindent               "自动缩进
-"set cindent shiftwidth=4     "自动缩进4空格
-"set smartindent              "智能缩进
-set backspace=2               "设置退格键可用
-set nu                       "显示行号
-set showmatch                "显示括号配对情况
-"set mouse=a                  "启用鼠标
-"set ruler                    "启用状态栏标尺
-"set incsearch                "开启实时搜索功能
-set hlsearch                 "开启高亮显示搜索结果
-"set smartcase                "开启智能大小写搜索
-"set ignorecase               "搜索时忽略大小写
-"set nowrapscan               "搜索到文件两端时不重新搜索
-set vb t_vb=                 "关闭提示音
-set cursorline               "突出显示当前行
-"set cursorcolumn             "突出显示当前列
-set hidden                   "允许在有未保存的修改时切换缓冲区
-"set wildmenu                 "启动增强模式下的命令行自动完成
-"set cmdheight=2              "设置命令行高度
-"set autoread                 "自动读取被外部修改的文件内容
-"set autowrite                "开启自动保存
-set nowrap                   "不自动换行
-"set backup                   "自动备份修改前的文件为源文件名加~
-"set noswapfile               "编辑时不产生交换文件
-"set autochdir                "自动切换当前目录为文件所在的目录
-"set equalalways              "分割窗口时保持相等的宽和高
-
-"优化退格键的行为
+"Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-"显示Tab符并使用高亮竖线代替
+"Display unprintable characters: <Tab> as |
 set list
 set listchars=tab:\|\ ,
 
-syntax enable                "打开语法高亮
-syntax on                    "开启文件类型侦测
+syntax enable                "Enable syntax highlighting
+syntax on
 
-"每行超过80个的字符用下划线标示
+"Underline the characters at column 80
 au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
 
-"自定义状态栏显示(文件名称,文件格式,文件类型,光标字符ASCII与16进制值,光标所在行号和列号,文件总行数)
+"Customize the status line
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"set laststatus=2             "总是显示状态栏
+"set laststatus=2             "Always show status line
 
-set fileformats=unix,dos,mac "自动识别文件格式
+set fileformats=unix,dos,mac "Automatic detection will be done when reading a file
 
-"设置默认编码
+"Default file encoding
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
-"解决Consle乱码输出问题
-"language messages zh_CN.utf-8
+"Set the current language
 language messages en_US.utf-8
 
-""插件配置(可选)
+""Plugins(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Taglist
-let Tlist_Use_Right_Window = 1                 "在右侧窗口中显示
-let Tlist_File_Fold_Auto_Close = 1             "自动折叠
-let Tlist_Show_One_File = 1                    "只显示当前文件的tags
-let Tlist_Exit_OnlyWindow = 1                  "如果Taglist窗口是最后一个窗口则退出Vim
+let Tlist_Use_Right_Window = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
 
-"通过快捷键<F10>开关Taglist
+"Map Taglist to <F10>
 nnoremap <silent> <F10> :Tlist<CR>
 
-"通过快捷键<F9>开关NERDTree
+"Map NERDTree Tabs to <F9>
 nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 
-"通过快捷键<F8>切换窗口
+"Map <C-W> to <F8>
 nnoremap <silent> <F8> <C-W>w
 
-"通过快捷键<F7>启用Pyflakes
+"Map Pyflakes to <F7>
 "autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 
-"通过快捷键<F6>开关粘贴模式临时关闭自动缩进等功能方便从外部复制代码
+"Turn on/off paste mode by <F6>
 set pastetoggle=<F6>
 
-"Python语法结构自动补全[pydiction]
+"Pydiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
-"Minibufexpl多文件编辑
+"Minibufexpl
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1   
 let g:miniBufExplMapCTabSwitchBufs = 1   
 let g:miniBufExplModSelTarget = 1 
 
-""引号,括号自动匹配(可选)
+""Map auto complete of (), {}, [], <>, "", '', ``(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ":inoremap ( ()<ESC>i
 ":inoremap ) <c-r>=ClosePair(')')<CR>
@@ -162,9 +154,8 @@ let g:miniBufExplModSelTarget = 1
 "    endif
 "endf
 
-""自定义函数(可选)
+""Custom functions(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"初始化并加载作者,时间信息
 "function CreateInfo()
 "    call append(0, "#!/usr/bin/env python")
 "    call append(1, "#-*- coding:utf-8 -*-")
@@ -175,12 +166,10 @@ let g:miniBufExplModSelTarget = 1
 "    call append(6, "")
 "endf
 "
-"自动更新时间信息
 "function UpdateInfo()
 "    execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M %Z")'
 "endf
 "
-"检测并执行创建或更新[非插入模式]
 "function MyInfo()
 "    let n = 1
 "    while n < 10
@@ -194,7 +183,6 @@ let g:miniBufExplModSelTarget = 1
 "    call CreateInfo()
 "endf
 "
-"初始化并加载主函数模板[非插入模式]
 "function MyMain() 
 "    call append(line("."),   "import os")
 "    call append(line(".")+1, "import sys")
@@ -227,6 +215,5 @@ let g:miniBufExplModSelTarget = 1
 "    call append(line(".")+28, "    sys.exit(main())")
 "endf
 "
-"映射到快捷键F2,F3
 "map <F2> <Esc>:call MyInfo()<CR><Esc>
 "map <F3> <Esc>:call MyMain()<CR><Esc>
