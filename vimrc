@@ -1,4 +1,4 @@
-""Use Vundle to manage vim plugins
+""Use Vundle to manage VIM plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Compatible settings
 set nocompatible
@@ -13,7 +13,7 @@ call vundle#begin()
 "Use Vundle to manage itself
 Plugin 'gmarik/Vundle.vim'
 
-"Use Vundle to manage vim plugins which on GitHub(optional)
+"Use Vundle to manage VIM plugins which on GitHub(optional)
 Plugin 'scrooloose/nerdtree'           "NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'       "NERDTree Tabs
 Plugin 'vim-scripts/minibufexpl.vim'   "Minibufexpl
