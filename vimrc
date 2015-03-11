@@ -63,7 +63,7 @@ set hidden                   "A buffer becomes hidden when it is abandoned
 "set autowrite                "Auto saves changes when quitting and swiching buffer
 set nowrap                   "Do not wrap lines
 "set backup                   "Keep a backup file with suffix ~
-"set noswapfile               "Use a swapfile for the buffer
+"set noswapfile               "Do not use a swapfile for the buffer
 "set autochdir                "Change the current working directory
 "set equalalways              "Makes all the windows the same size after a window is split or closed
 
