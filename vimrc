@@ -100,8 +100,8 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
 "解决Consle乱码输出问题
-language messages zh_CN.utf-8
-"language messages en_US.utf-8
+"language messages zh_CN.utf-8
+language messages en_US.utf-8
 
 ""插件配置(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
