@@ -75,7 +75,8 @@ set whichwrap+=<,>,h,l
 set list
 set listchars=tab:\|\ ,
 
-syntax enable                "Enable syntax highlighting
+"Enable syntax highlighting
+syntax enable
 syntax on
 
 "Underline the characters at column 80
@@ -85,7 +86,8 @@ au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vi
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 "set laststatus=2             "Always show status line
 
-set fileformats=unix,dos,mac "Automatic detection will be done when reading a file
+"Automatic detection will be done when reading a file
+set fileformats=unix,dos,mac
 
 "Default file encoding
 set fenc=utf-8
