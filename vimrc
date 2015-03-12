@@ -153,72 +153,72 @@ let g:miniBufExplModSelTarget = 1
 ":inoremap ` ``<ESC>i
 "
 "function ClosePair(char)
-"    if getline('.')[col('.') - 1] == a:char
-"        return "\<Right>"
-"    else
-"        return a:char
-"    endif
+"  if getline('.')[col('.') - 1] == a:char
+"    return "\<Right>"
+"  else
+"    return a:char
+"  endif
 "endf
 
 ""Custom functions(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "function CreateInfo()
-"    call append(0, "#!/usr/bin/env python")
-"    call append(1, "#-*- coding:utf-8 -*-")
-"    call append(2, "")
-"    call append(3, "# Description: ")
-"    call append(4, "# Author: Dong Guo")
-"    call append(5, "# Last modified: ".strftime("%F %H:%M %Z"))
-"    call append(6, "")
+"  call append(0, "#!/usr/bin/env python")
+"  call append(1, "#-*- coding:utf-8 -*-")
+"  call append(2, "")
+"  call append(3, "# Description: ")
+"  call append(4, "# Author: Dong Guo")
+"  call append(5, "# Last modified: ".strftime("%F %H:%M %Z"))
+"  call append(6, "")
 "endf
 "
 "function UpdateInfo()
-"    execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M %Z")'
+"  execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M %Z")'
 "endf
 "
 "function MyInfo()
-"    let n = 1
-"    while n < 10
-"        let line = getline(n)
-"        if line =~ '^\#\s*\S*Last\smodified:\S*.*$'
-"            call UpdateInfo()
-"            return
-"        endif
-"        let n = n + 1
-"    endwhile
-"    call CreateInfo()
+"  let n = 1
+"  while n < 10
+"    let line = getline(n)
+"    if line =~ '^\#\s*\S*Last\smodified:\S*.*$'
+"      call UpdateInfo()
+"      return
+"    endif
+"    let n = n + 1
+"  endwhile
+"  call CreateInfo()
 "endf
 "
 "function MyMain() 
-"    call append(line("."),   "import os")
-"    call append(line(".")+1, "import sys")
-"    call append(line(".")+2, "")
-"    call append(line(".")+3, "def parse_opts():")
-"    call append(line(".")+4, "    \"\"\"Help messages(-h, --help).\"\"\"")
-"    call append(line(".")+5, "    ")
-"    call append(line(".")+6, "    import textwrap")
-"    call append(line(".")+7, "    import argparse")
-"    call append(line(".")+8, "    ")
-"    call append(line(".")+9, "    parser = argparse.ArgumentParser(")
-"    call append(line(".")+10, "        formatter_class=argparse.RawDescriptionHelpFormatter,")
-"    call append(line(".")+11, "        description=textwrap.dedent(")
-"    call append(line(".")+12, "        '''")
-"    call append(line(".")+13, "        '''.format(__file__)")
-"    call append(line(".")+14, "        ))")
-"    call append(line(".")+15, "    ")
-"    call append(line(".")+16, "    args = parser.parse_args()")
-"    call append(line(".")+17, "    return {}")
-"    call append(line(".")+18, "")
-"    call append(line(".")+19, "def main():")
-"    call append(line(".")+20, "    if len(sys.argv) < 2:")
-"    call append(line(".")+21, "        os.system(__file__ + ' -h')")
-"    call append(line(".")+22, "        return 2")
-"    call append(line(".")+23, "    ")
-"    call append(line(".")+24, "    opts = parse_opts()")
-"    call append(line(".")+25, "    return 0")
-"    call append(line(".")+26, "")
-"    call append(line(".")+27, "if __name__=='__main__':")
-"    call append(line(".")+28, "    sys.exit(main())")
+"  call append(line("."),   "import os")
+"  call append(line(".")+1, "import sys")
+"  call append(line(".")+2, "")
+"  call append(line(".")+3, "def parse_opts():")
+"  call append(line(".")+4, "    \"\"\"Help messages(-h, --help).\"\"\"")
+"  call append(line(".")+5, "    ")
+"  call append(line(".")+6, "    import textwrap")
+"  call append(line(".")+7, "    import argparse")
+"  call append(line(".")+8, "    ")
+"  call append(line(".")+9, "    parser = argparse.ArgumentParser(")
+"  call append(line(".")+10, "        formatter_class=argparse.RawDescriptionHelpFormatter,")
+"  call append(line(".")+11, "        description=textwrap.dedent(")
+"  call append(line(".")+12, "        '''")
+"  call append(line(".")+13, "        '''.format(__file__)")
+"  call append(line(".")+14, "        ))")
+"  call append(line(".")+15, "    ")
+"  call append(line(".")+16, "    args = parser.parse_args()")
+"  call append(line(".")+17, "    return {}")
+"  call append(line(".")+18, "")
+"  call append(line(".")+19, "def main():")
+"  call append(line(".")+20, "    if len(sys.argv) < 2:")
+"  call append(line(".")+21, "        os.system(__file__ + ' -h')")
+"  call append(line(".")+22, "        return 2")
+"  call append(line(".")+23, "    ")
+"  call append(line(".")+24, "    opts = parse_opts()")
+"  call append(line(".")+25, "    return 0")
+"  call append(line(".")+26, "")
+"  call append(line(".")+27, "if __name__=='__main__':")
+"  call append(line(".")+28, "    sys.exit(main())")
 "endf
 "
 "autocmd FileType python map <F2> <Esc>:call MyInfo()<CR><Esc>
