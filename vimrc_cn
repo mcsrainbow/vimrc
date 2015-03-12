@@ -18,9 +18,10 @@ Plugin 'scrooloose/nerdtree'           "树形目录
 Plugin 'jistr/vim-nerdtree-tabs'       "为树形目录提供Tab支持
 Plugin 'vim-scripts/minibufexpl.vim'   "多文件编辑
 Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
-Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 Plugin 'vim-scripts/autocomplpop'      "文本内容自动补全
+Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 "Plugin 'vim-scripts/pyflakes'          "实时检查python代码语法
+"Plugin 'kchmck/vim-coffee-script'      "CoffeeScript代码语法高亮
 "Plugin 'puppetlabs/puppet-syntax-vim'  "Puppet代码语法高亮
 "Plugin 'saltstack/salt-vim'            "Salt代码语法高亮
 "Plugin 'chase/vim-ansible-yaml'        "Ansible代码语法高亮
@@ -44,14 +45,13 @@ colorscheme inkpot           "配色模式inkpot
 "colorscheme jellybeans       "配色模式jellybeans
 set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
-set tabstop=4                "设置Tab键的宽度
+set tabstop=4                "设置Tab键的宽度为4个空格
 "set smarttab                 "智能使用Tab键
-"set shiftwidth=4             "换行时行间交错使用4个空格
+set shiftwidth=4             "换行时行间交错使用4个空格
 set autoindent               "自动缩进
-"set cindent shiftwidth=4     "自动缩进4空格
 "set smartindent              "智能缩进
 set backspace=2               "设置退格键可用
-set nu                       "显示行号
+"set nu                       "显示行号
 set showmatch                "显示括号配对情况
 "set mouse=a                  "启用鼠标
 "set ruler                    "启用状态栏标尺
@@ -73,6 +73,10 @@ set nowrap                   "不自动换行
 "set noswapfile               "编辑时不产生交换文件
 "set autochdir                "自动切换当前目录为文件所在的目录
 "set equalalways              "分割窗口时保持相等的宽和高
+
+"针对文件类型使用特定的缩进与Tab键宽度
+autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
+"autocmd BufNewFile,BufReadPost *.coffee setlocal expandtab tabstop=2 shiftwidth=2
 
 "优化退格键的行为
 set backspace=eol,start,indent
@@ -228,5 +232,5 @@ let g:miniBufExplModSelTarget = 1
 "endf
 "
 "映射到快捷键F2,F3
-"map <F2> <Esc>:call MyInfo()<CR><Esc>
-"map <F3> <Esc>:call MyMain()<CR><Esc>
+"autocmd FileType python map <F2> <Esc>:call MyInfo()<CR><Esc>
+"autocmd FileType python map <F3> <Esc>:call MyMain()<CR><Esc>

@@ -18,9 +18,10 @@ Plugin 'scrooloose/nerdtree'           "NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'       "NERDTree Tabs
 Plugin 'vim-scripts/minibufexpl.vim'   "Minibufexpl
 Plugin 'vim-scripts/taglist.vim'       "Based on ctags
-Plugin 'vim-scripts/pydiction'         "Pydiction
 Plugin 'vim-scripts/autocomplpop'      "Autocomplpop
+Plugin 'vim-scripts/pydiction'         "Pydiction
 "Plugin 'vim-scripts/pyflakes'          "Pyflakes
+"Plugin 'kchmck/vim-coffee-script'      "CoffeeScript Syntax
 "Plugin 'puppetlabs/puppet-syntax-vim'  "Puppet Syntax 
 "Plugin 'saltstack/salt-vim'            "Salt Syntax
 "Plugin 'chase/vim-ansible-yaml'        "Ansible Syntax
@@ -39,9 +40,8 @@ set history=400              "The command-lines that you enter are remembered in
 set expandtab                "Use spaces instead of tabs
 set tabstop=4                "1 tab == 4 spaces
 "set smarttab                 "Be smart when <Tab> in front of a line inserts blanks
-"set shiftwidth=4             "Number of spaces to use for each step of (auto)indent
+set shiftwidth=4             "Number of spaces to use for each step of (auto)indent
 set autoindent               "Copy indent from current line when starting a new line
-"set cindent shiftwidth=4     "The indent is counted in spaces, the value of 'tabstop' is relevant
 "set smartindent              "Do smart autoindenting when starting a new line
 set backspace=2              "Enable the use of the <BS>
 "set nu                       "Show line numbers
@@ -66,6 +66,10 @@ set nowrap                   "Do not wrap lines
 "set noswapfile               "Do not use a swapfile for the buffer
 "set autochdir                "Change the current working directory
 "set equalalways              "Makes all the windows the same size after a window is split or closed
+
+"Different tab and indent preferences based on filetype
+autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
+"autocmd BufNewFile,BufReadPost *.coffee setlocal expandtab tabstop=2 shiftwidth=2
 
 "Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -217,5 +221,5 @@ let g:miniBufExplModSelTarget = 1
 "    call append(line(".")+28, "    sys.exit(main())")
 "endf
 "
-"map <F2> <Esc>:call MyInfo()<CR><Esc>
-"map <F3> <Esc>:call MyMain()<CR><Esc>
+"autocmd FileType python map <F2> <Esc>:call MyInfo()<CR><Esc>
+"autocmd FileType python map <F3> <Esc>:call MyMain()<CR><Esc>
