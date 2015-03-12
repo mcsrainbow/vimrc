@@ -67,7 +67,7 @@ set nowrap                   "Do not wrap lines
 "set autochdir                "Change the current working directory
 "set equalalways              "Makes all the windows the same size after a window is split or closed
 
-"Different tab and indent preferences based on filetype
+"Change the indentation behavior based on the file type
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
 "autocmd BufNewFile,BufReadPost *.coffee setlocal expandtab tabstop=2 shiftwidth=2
 
