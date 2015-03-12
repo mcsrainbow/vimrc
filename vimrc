@@ -35,6 +35,8 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot           "The currently active color scheme
 "colorscheme SolarizedDark
+"colorscheme BusyBee
+"colorscheme herald
 "colorscheme jellybeans
 set history=400              "The command-lines that you enter are remembered in a history table
 set expandtab                "Use spaces instead of tabs
