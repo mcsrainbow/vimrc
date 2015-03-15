@@ -16,7 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 "使用Vundle管理位于GitHub上的插件(可选)
 Plugin 'scrooloose/nerdtree'           "树形目录
 Plugin 'jistr/vim-nerdtree-tabs'       "为树形目录提供Tab支持
-Plugin 'vim-scripts/minibufexpl.vim'   "多文件编辑
+Plugin 'fholgado/minibufexpl.vim'      "多文件编辑
 Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
 Plugin 'vim-scripts/autocomplpop'      "文本内容自动补全
 Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全

@@ -16,7 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 "Use Vundle to manage VIM plugins which on GitHub(optional)
 Plugin 'scrooloose/nerdtree'           "NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'       "NERDTree Tabs
-Plugin 'vim-scripts/minibufexpl.vim'   "Minibufexpl
+Plugin 'fholgado/minibufexpl.vim'      "MiniBufExpl
 Plugin 'vim-scripts/taglist.vim'       "Based on ctags
 Plugin 'vim-scripts/autocomplpop'      "Autocomplpop
 Plugin 'vim-scripts/pydiction'         "Pydiction
