@@ -10,7 +10,7 @@ Instruction
 3. Copy the configuration file<br>
 `cp vimrc ~/.vimrc`<br>
 
-4. Copy the popular schemes on [Bytefluent | Vivify](http://bytefluent.com/vivify/) with "Vim Mode".
+4. Copy the popular schemes on [Bytefluent | Vivify](http://bytefluent.com/vivify/) with "Vim Mode"<br>
 `cp -r vim/colors ~/.vim/`<br>
 
 5. Install Plugins<br>
