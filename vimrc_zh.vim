@@ -41,10 +41,12 @@ filetype plugin indent on
 ""配置选项(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot           "配色模式(根据个人喜好进行选择)
-"colorscheme SolarizedDark
+"colorscheme corporation
 "colorscheme BusyBee
-"colorscheme herald
+"colorscheme SolarizedDark
 "colorscheme jellybeans
+"colorscheme blackdust
+"colorscheme herald
 set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度为4个空格
