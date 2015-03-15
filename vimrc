@@ -131,7 +131,7 @@ set pastetoggle=<F6>
 "Pydiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
-"Minibufexpl
+"MiniBufExpl
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1   
 let g:miniBufExplMapCTabSwitchBufs = 1   

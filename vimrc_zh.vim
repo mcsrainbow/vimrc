@@ -137,7 +137,7 @@ set pastetoggle=<F6>
 "Python语法结构自动补全[pydiction]
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
-"Minibufexpl多文件编辑
+"MiniBufExpl多文件编辑
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1   
 let g:miniBufExplMapCTabSwitchBufs = 1   
