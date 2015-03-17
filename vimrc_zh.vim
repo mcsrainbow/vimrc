@@ -26,7 +26,7 @@ Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 "Plugin 'saltstack/salt-vim'            "Salt代码语法高亮
 "Plugin 'chase/vim-ansible-yaml'        "Ansible代码语法高亮
 
-"使用Vundle下载位于GitHub上的流行配色模式(根据个人喜好进行选择)
+"使用Vundle下载位于GitHub上的配色模式,由http://cocopon.me/app/vim-color-gallery/推荐(根据个人喜好进行选择)
 "Plugin 'ciaranm/inkpot'                    "inkpot 配色模式
 "Plugin 'vim-scripts/BusyBee'               "BusyBee 配色模式
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans 配色模式

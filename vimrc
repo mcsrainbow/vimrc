@@ -26,7 +26,7 @@ Plugin 'vim-scripts/pydiction'         "Pydiction
 "Plugin 'saltstack/salt-vim'            "Salt Syntax
 "Plugin 'chase/vim-ansible-yaml'        "Ansible Syntax
 
-"Use Vundle to download the popular color schemes which on GitHub(optional)
+"Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/(optional)
 "Plugin 'ciaranm/inkpot'                    "inkpot color scheme
 "Plugin 'vim-scripts/BusyBee'               "BusyBee color scheme
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme

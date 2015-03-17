@@ -7,7 +7,7 @@ Instruction
 2. Install Vundle package<br>
 `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`<br>
 
-3. Copy the configuration file, including the popular color schemes from [Vim Colorscheme Gallery - cocopon](http://cocopon.me/app/vim-color-gallery/)<br>
+3. Copy the configuration file<br>
 `cp vimrc ~/.vimrc`<br>
 
 4. Install Plugins<br>
