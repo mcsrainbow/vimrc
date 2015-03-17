@@ -28,9 +28,10 @@ Plugin 'vim-scripts/pydiction'         "Pydiction
 
 "Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/(optional)
 "Plugin 'ciaranm/inkpot'                    "inkpot color scheme
-"Plugin 'vim-scripts/BusyBee'               "BusyBee color scheme
+"Plugin 'mcsrainbow/inkpot_cterm'           "inkpot_cterm color scheme
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme
 "Plugin 'altercation/vim-colors-solarized'  "solarized color scheme
+"Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night color scheme
 
 "Vundle END
 call vundle#end()
@@ -40,9 +41,10 @@ filetype plugin indent on
 "Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme inkpot           "The color schemes
-"colorscheme BusyBee
+"colorscheme inkpot_cterm
 "colorscheme jellybeans
 "colorscheme solarized
+"colorscheme Tomorrow-Night
 "set background=dark          "Use dark background color for terminal
 set history=400              "The command-lines that you enter are remembered in a history table
 set expandtab                "Use spaces instead of tabs

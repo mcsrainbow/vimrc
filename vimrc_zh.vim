@@ -28,9 +28,10 @@ Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 
 "使用Vundle下载位于GitHub上的配色模式,由http://cocopon.me/app/vim-color-gallery/推荐(根据个人喜好进行选择)
 "Plugin 'ciaranm/inkpot'                    "inkpot 配色模式
-"Plugin 'vim-scripts/BusyBee'               "BusyBee 配色模式
+"Plugin 'mcsrainbow/inkpot_cterm'           "inkpot_cterm 配色模式
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans 配色模式
 "Plugin 'altercation/vim-colors-solarized'  "solarized 配色模式
+"Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night 配色模式
 
 "Vundle插件管理区域结束标签
 call vundle#end()
@@ -47,9 +48,10 @@ filetype plugin indent on
 ""配置选项(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme inkpot           "配色模式(根据个人喜好进行选择)
-"colorscheme BusyBee
+"colorscheme inkpot_cterm
 "colorscheme jellybeans
 "colorscheme solarized
+"colorscheme Tomorrow-Night
 "set background=dark          "使用较暗的背景色
 set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
