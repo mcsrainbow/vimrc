@@ -125,7 +125,7 @@ nnoremap <silent> <F8> <C-W>w
 "Map Pyflakes to <F7>
 "autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 
-"Turn on/off paste mode by <F6>
+"Turn on/off paste-mode by <F6> to paste code without auto-indent and auto-complete
 set pastetoggle=<F6>
 
 "Pydiction

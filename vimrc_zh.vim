@@ -131,7 +131,7 @@ nnoremap <silent> <F8> <C-W>w
 "通过快捷键<F7>启用Pyflakes
 "autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 
-"通过快捷键<F6>开关粘贴模式临时关闭自动缩进等功能方便从外部复制代码
+"通过快捷键<F6>开关粘贴模式临时关闭自动缩进与自动完成等功能方便从外部复制代码
 set pastetoggle=<F6>
 
 "Python语法结构自动补全[pydiction]
