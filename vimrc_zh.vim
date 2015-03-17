@@ -50,6 +50,7 @@ filetype plugin indent on
 "colorscheme BusyBee
 "colorscheme jellybeans
 "colorscheme solarized
+"set background=dark          "使用较暗的背景色
 set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度为4个空格

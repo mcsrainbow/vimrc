@@ -43,6 +43,7 @@ filetype plugin indent on
 "colorscheme BusyBee
 "colorscheme jellybeans
 "colorscheme solarized
+"set background=dark          "Use dark background color for terminal
 set history=400              "The command-lines that you enter are remembered in a history table
 set expandtab                "Use spaces instead of tabs
 set tabstop=4                "1 tab == 4 spaces
