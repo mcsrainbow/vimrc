@@ -39,7 +39,7 @@ filetype plugin indent on
 
 "Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"colorscheme inkpot           "The currently active color scheme
+"colorscheme inkpot           "The color schemes
 "colorscheme BusyBee
 "colorscheme jellybeans
 "colorscheme solarized
