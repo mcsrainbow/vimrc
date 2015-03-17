@@ -26,6 +26,12 @@ Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 "Plugin 'saltstack/salt-vim'            "Salt代码语法高亮
 "Plugin 'chase/vim-ansible-yaml'        "Ansible代码语法高亮
 
+"使用Vundle下载位于GitHub上的流行配色模式(根据个人喜好进行选择)
+"Plugin 'ciaranm/inkpot'                    "inkpot 配色模式
+"Plugin 'vim-scripts/BusyBee'               "BusyBee 配色模式
+"Plugin 'nanotech/jellybeans.vim'           "jellybeans 配色模式
+"Plugin 'altercation/vim-colors-solarized'  "solarized 配色模式
+
 "Vundle插件管理区域结束标签
 call vundle#end()
 "针对不同的文件类型加载对应的插件并允许开启自动补全
@@ -40,13 +46,10 @@ filetype plugin indent on
 
 ""配置选项(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme inkpot           "配色模式(根据个人喜好进行选择)
-"colorscheme corporation
+"colorscheme inkpot           "配色模式(根据个人喜好进行选择)
 "colorscheme BusyBee
-"colorscheme SolarizedDark
 "colorscheme jellybeans
-"colorscheme blackdust
-"colorscheme herald
+"colorscheme solarized
 set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度为4个空格
