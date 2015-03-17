@@ -28,7 +28,7 @@ Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 
 "使用Vundle下载位于GitHub上的配色模式,由http://cocopon.me/app/vim-color-gallery/推荐(根据个人喜好进行选择)
 "Plugin 'ciaranm/inkpot'                    "inkpot 配色模式
-"Plugin 'mcsrainbow/inkpot_cterm'           "inkpot_cterm 配色模式
+"Plugin 'mcsrainbow/vivify-inkpot'          "vivify-inkpot 配色模式
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans 配色模式
 "Plugin 'altercation/vim-colors-solarized'  "solarized 配色模式
 "Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night 配色模式
@@ -48,7 +48,7 @@ filetype plugin indent on
 ""配置选项(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme inkpot           "配色模式(根据个人喜好进行选择)
-"colorscheme inkpot_cterm
+"colorscheme vivify-inkpot
 "colorscheme jellybeans
 "colorscheme solarized
 "colorscheme Tomorrow-Night

@@ -28,7 +28,7 @@ Plugin 'vim-scripts/pydiction'         "Pydiction
 
 "Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/(optional)
 "Plugin 'ciaranm/inkpot'                    "inkpot color scheme
-"Plugin 'mcsrainbow/inkpot_cterm'           "inkpot_cterm color scheme
+"Plugin 'mcsrainbow/vivify-inkpot'          "vivify-inkpot color scheme
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme
 "Plugin 'altercation/vim-colors-solarized'  "solarized color scheme
 "Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night color scheme
@@ -41,7 +41,7 @@ filetype plugin indent on
 "Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme inkpot           "The color schemes
-"colorscheme inkpot_cterm
+"colorscheme vivify-inkpot
 "colorscheme jellybeans
 "colorscheme solarized
 "colorscheme Tomorrow-Night
