@@ -60,7 +60,6 @@ set tabstop=4                "设置Tab键的宽度为4个空格
 set shiftwidth=4             "换行时行间交错使用4个空格
 set autoindent               "自动缩进
 "set smartindent              "智能缩进
-set backspace=2               "设置退格键可用
 "set nu                       "显示行号
 set showmatch                "显示括号配对情况
 "set mouse=a                  "启用鼠标
@@ -88,7 +87,7 @@ set nowrap                   "不自动换行
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
 "autocmd BufNewFile,BufReadPost *.coffee setlocal expandtab tabstop=2 shiftwidth=2
 
-"优化退格键的行为
+"启用并优化退格键的行为
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 

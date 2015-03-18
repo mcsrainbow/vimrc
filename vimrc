@@ -53,7 +53,6 @@ set tabstop=4                "1 tab == 4 spaces
 set shiftwidth=4             "Number of spaces to use for each step of (auto)indent
 set autoindent               "Copy indent from current line when starting a new line
 "set smartindent              "Do smart autoindenting when starting a new line
-set backspace=2              "Enable the use of the <BS>
 "set nu                       "Show line numbers
 set showmatch                "Show matching brackets when text indicator is over them
 "set mouse=a                  "Enable the use of the mouse
