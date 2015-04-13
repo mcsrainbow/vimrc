@@ -8,6 +8,8 @@ Instruction
 `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`<br>
 
 3. Copy the configuration file<br>
+`git clone https://github.com/mcsrainbow/vimrc`<br>
+`cd vimrc`<br>
 `cp vimrc ~/.vimrc`<br>
 
 4. Install Plugins<br>
