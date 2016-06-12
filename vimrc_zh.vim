@@ -118,8 +118,8 @@ let Tlist_Show_One_File = 1                    "只显示当前文件的tags
 let Tlist_Exit_OnlyWindow = 1                  "如果Taglist窗口是最后一个窗口则退出Vim
 
 "Jedi Python语法结构自动补全
-let g:jedi#completions_enabled = 1                    "启用Jedi自动补全
-autocmd FileType python setlocal completeopt-=preview "禁用在补全期间自动弹出文档描述
+let g:jedi#completions_enabled = 1                     "启用Jedi自动补全
+autocmd FileType python setlocal completeopt-=preview  "禁用在补全期间自动弹出文档描述
 
 "通过快捷键<F10>开关Taglist
 nnoremap <silent> <F10> :Tlist<CR>

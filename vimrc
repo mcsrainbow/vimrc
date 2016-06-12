@@ -112,8 +112,8 @@ let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 
 "Jedi Python autocompletion
-let g:jedi#completions_enabled = 1                    "Enable Jedi autocompletion
-autocmd FileType python setlocal completeopt-=preview "Disable the docstring window to popup during completion
+let g:jedi#completions_enabled = 1                     "Enable Jedi autocompletion
+autocmd FileType python setlocal completeopt-=preview  "Disable the docstring window to popup during completion
 
 "Map Taglist to <F10>
 nnoremap <silent> <F10> :Tlist<CR>
