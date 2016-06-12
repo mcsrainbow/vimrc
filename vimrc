@@ -20,6 +20,7 @@ Plugin 'fholgado/minibufexpl.vim'      "MiniBufExpl
 Plugin 'vim-scripts/taglist.vim'       "Based on ctags
 Plugin 'vim-scripts/autocomplpop'      "Autocomplpop
 Plugin 'vim-scripts/pydiction'         "Pydiction
+Plugin 'mitsuhiko/vim-python-combined' "Better Combined Python
 "Plugin 'vim-scripts/pyflakes'          "Pyflakes
 "Plugin 'kchmck/vim-coffee-script'      "CoffeeScript Syntax
 "Plugin 'puppetlabs/puppet-syntax-vim'  "Puppet Syntax 
