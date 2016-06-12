@@ -21,18 +21,13 @@ Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
 Plugin 'vim-scripts/autocomplpop'      "文本内容自动补全
 Plugin 'vim-scripts/pydiction'         "Python语法结构自动补全
 Plugin 'mitsuhiko/vim-python-combined' "更好的Python支持
-"Plugin 'vim-scripts/pyflakes'          "实时检查python代码语法
-"Plugin 'kchmck/vim-coffee-script'      "CoffeeScript代码语法高亮
-"Plugin 'puppetlabs/puppet-syntax-vim'  "Puppet代码语法高亮
-"Plugin 'saltstack/salt-vim'            "Salt代码语法高亮
-"Plugin 'chase/vim-ansible-yaml'        "Ansible代码语法高亮
+Plugin 'vim-scripts/pyflakes'          "实时检查python代码语法
 
 "使用Vundle下载位于GitHub上的配色模式,由http://cocopon.me/app/vim-color-gallery/推荐(根据个人喜好进行选择)
-"Plugin 'ciaranm/inkpot'                    "inkpot 配色模式
-"Plugin 'mcsrainbow/vivify-inkpot'          "vivify-inkpot 配色模式
-"Plugin 'nanotech/jellybeans.vim'           "jellybeans 配色模式
-"Plugin 'altercation/vim-colors-solarized'  "solarized 配色模式
-"Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night 配色模式
+Plugin 'ciaranm/inkpot'                    "inkpot配色模式
+Plugin 'nanotech/jellybeans.vim'           "jellybeans配色模式
+"Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night配色模式
+"Plugin 'altercation/vim-colors-solarized'  "solarized配色模式
 
 "Vundle插件管理区域结束标签
 call vundle#end()
@@ -48,12 +43,11 @@ filetype plugin indent on
 
 ""配置选项(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"colorscheme inkpot           "配色模式(根据个人喜好进行选择)
-"colorscheme vivify-inkpot
-"colorscheme jellybeans
-"colorscheme solarized
-"colorscheme Tomorrow-Night
-"set background=dark          "使用较暗的背景色
+colorscheme inkpot           "启用inkpot配色模式(根据个人喜好进行选择)
+"colorscheme jellybeans       "启用jellybeans配色模式(根据个人喜好进行选择)
+"colorscheme Tomorrow-Night   "启用Tomorrow Night配色模式(根据个人喜好进行选择)
+"colorscheme solarized        "启用solarized配色模式(根据个人喜好进行选择)
+set background=dark          "使用较暗的背景色
 set history=400              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度为4个空格
@@ -86,7 +80,6 @@ set nowrap                   "不自动换行
 
 "针对文件类型使用特定的缩进与Tab键宽度
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
-"autocmd BufNewFile,BufReadPost *.coffee setlocal expandtab tabstop=2 shiftwidth=2
 
 "启用并优化退格键的行为
 set backspace=eol,start,indent
@@ -114,8 +107,8 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
 "解决Consle乱码输出问题
-"language messages zh_CN.utf-8
-language messages en_US.utf-8
+"language messages en_US.utf-8
+language messages zh_CN.utf-8
 
 ""插件配置(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -124,6 +117,10 @@ let Tlist_Use_Right_Window = 1                 "在右侧窗口中显示
 let Tlist_File_Fold_Auto_Close = 1             "自动折叠
 let Tlist_Show_One_File = 1                    "只显示当前文件的tags
 let Tlist_Exit_OnlyWindow = 1                  "如果Taglist窗口是最后一个窗口则退出Vim
+
+"Jedi Python语法结构自动补全
+let g:jedi#completions_enabled = 1                    "启用Jedi自动补全
+autocmd FileType python setlocal completeopt-=preview "禁用在补全期间自动弹出文档描述
 
 "通过快捷键<F10>开关Taglist
 nnoremap <silent> <F10> :Tlist<CR>
@@ -135,13 +132,10 @@ nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 nnoremap <silent> <F8> <C-W>w
 
 "通过快捷键<F7>启用Pyflakes
-"autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
+autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 
 "通过快捷键<F6>开关粘贴模式临时关闭自动缩进与自动完成等功能方便从外部复制代码
 set pastetoggle=<F6>
-
-"Python语法结构自动补全[pydiction]
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 "MiniBufExpl多文件编辑
 let g:miniBufExplMapWindowNavVim = 1
@@ -151,96 +145,27 @@ let g:miniBufExplModSelTarget = 1
 
 ""引号,括号自动匹配(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-":inoremap ( ()<ESC>i
-":inoremap ) <c-r>=ClosePair(')')<CR>
-"
-":inoremap { {}<ESC>i
-":inoremap } <c-r>=ClosePair('}')<CR>
-"
-":inoremap [ []<ESC>i
-":inoremap ] <c-r>=ClosePair(']')<CR>
-"
-"":inoremap < <><ESC>i
-"":inoremap > <c-r>=ClosePair('>')<CR>
-"
+:inoremap ( ()<ESC>i
+:inoremap ) <c-r>=ClosePair(')')<CR>
+
+:inoremap { {}<ESC>i
+:inoremap } <c-r>=ClosePair('}')<CR>
+
+:inoremap [ []<ESC>i
+:inoremap ] <c-r>=ClosePair(']')<CR>
+
+":inoremap < <><ESC>i
+":inoremap > <c-r>=ClosePair('>')<CR>
+
 ":inoremap " ""<ESC>i
 ":inoremap ' ''<ESC>i
-"
-":inoremap ` ``<ESC>i
-"
-"function ClosePair(char)
-"  if getline('.')[col('.') - 1] == a:char
-"    return "\<Right>"
-"  else
-"    return a:char
-"  endif
-"endf
 
-""自定义函数(可选)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"初始化并加载作者,时间信息
-"function CreateInfo()
-"  call append(0, "#!/usr/bin/env python")
-"  call append(1, "#-*- coding:utf-8 -*-")
-"  call append(2, "")
-"  call append(3, "# Description: ")
-"  call append(4, "# Author: Dong Guo")
-"  call append(5, "# Last modified: ".strftime("%F %H:%M %Z"))
-"  call append(6, "")
-"endf
-"
-"自动更新时间信息
-"function UpdateInfo()
-"  execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M %Z")'
-"endf
-"
-"检测并执行创建或更新[非插入模式]
-"function MyInfo()
-"  let n = 1
-"  while n < 10
-"    let line = getline(n)
-"    if line =~ '^\#\s*\S*Last\smodified:\S*.*$'
-"      call UpdateInfo()
-"      return
-"    endif
-"    let n = n + 1
-"  endwhile
-"  call CreateInfo()
-"endf
-"
-"初始化并加载主函数模板[非插入模式]
-"function MyMain() 
-"  call append(line("."),   "import os")
-"  call append(line(".")+1, "import sys")
-"  call append(line(".")+2, "")
-"  call append(line(".")+3, "def parse_opts():")
-"  call append(line(".")+4, "    \"\"\"Help messages(-h, --help).\"\"\"")
-"  call append(line(".")+5, "    ")
-"  call append(line(".")+6, "    import textwrap")
-"  call append(line(".")+7, "    import argparse")
-"  call append(line(".")+8, "    ")
-"  call append(line(".")+9, "    parser = argparse.ArgumentParser(")
-"  call append(line(".")+10, "        formatter_class=argparse.RawDescriptionHelpFormatter,")
-"  call append(line(".")+11, "        description=textwrap.dedent(")
-"  call append(line(".")+12, "        '''")
-"  call append(line(".")+13, "        '''.format(__file__)")
-"  call append(line(".")+14, "        ))")
-"  call append(line(".")+15, "    ")
-"  call append(line(".")+16, "    args = parser.parse_args()")
-"  call append(line(".")+17, "    return {}")
-"  call append(line(".")+18, "")
-"  call append(line(".")+19, "def main():")
-"  call append(line(".")+20, "    if len(sys.argv) < 2:")
-"  call append(line(".")+21, "        os.system(__file__ + ' -h')")
-"  call append(line(".")+22, "        return 2")
-"  call append(line(".")+23, "    ")
-"  call append(line(".")+24, "    opts = parse_opts()")
-"  call append(line(".")+25, "    return 0")
-"  call append(line(".")+26, "")
-"  call append(line(".")+27, "if __name__=='__main__':")
-"  call append(line(".")+28, "    sys.exit(main())")
-"endf
-"
-"映射到快捷键F2,F3
-"autocmd FileType python map <F2> <Esc>:call MyInfo()<CR><Esc>
-"autocmd FileType python map <F3> <Esc>:call MyMain()<CR><Esc>
+":inoremap ` ``<ESC>i
+
+function ClosePair(char)
+  if getline('.')[col('.') - 1] == a:char
+    return "\<Right>"
+  else
+    return a:char
+  endif
+endf
