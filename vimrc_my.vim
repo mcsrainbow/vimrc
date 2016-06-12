@@ -117,7 +117,7 @@ let g:jedi#completions_enabled = 1                     "Enable Jedi autocompleti
 autocmd FileType python setlocal completeopt-=preview  "Disable the docstring window to popup during completion
 
 "Set Ansible inventory file with filetype 'ansible_hosts'
-au BufRead,BufNewFile *hosts*,hosts/* setlocal filetype=ansible_hosts
+au BufRead,BufNewFile hosts/* setlocal filetype=ansible_hosts
 
 "Highlight more additional keywords in Ansible playbooks
 let g:ansible_extra_keywords_highlight = 1
