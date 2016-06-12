@@ -116,10 +116,11 @@ let Tlist_Exit_OnlyWindow = 1
 let g:jedi#completions_enabled = 1                     "Enable Jedi autocompletion
 autocmd FileType python setlocal completeopt-=preview  "Disable the docstring window to popup during completion
 
-"Ansible syntax
-autocmd BufRead,BufNewFile hosts/* setlocal filetype=ansible_hosts  "Set inventory file with filetype 'ansible_hosts'
-let g:ansible_extra_syntaxes = "sh.vim"                             "Load extra syntaxes for all .j2 files
-let g:ansible_extra_keywords_highlight = 1                          "Highlight more additional keywords in playbooks
+"Set Ansible inventory file with filetype 'ansible_hosts'
+au BufRead,BufNewFile *hosts.* setlocal filetype=ansible_hosts
+
+"Highlight more additional keywords in Ansible playbooks
+let g:ansible_extra_keywords_highlight = 1
 
 "Map Taglist to <F10>
 nnoremap <silent> <F10> :Tlist<CR>
