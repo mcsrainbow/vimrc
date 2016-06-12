@@ -1,8 +1,15 @@
 Instruction
 ---
 1. Install packages<br>
+On CentOS:<br>
+`sudo yum upgrade vim-common vim-minimal`<br>
 `sudo yum install vim git ctags`<br>
 `sudo pip install pyflakes`<br>
+
+On Mac OS X:<br>
+`brew install vim`<br>
+`brew install git ctags`<br>
+`pip install pyflakes`<br>
 
 2. Install Vundle package<br>
 `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`<br>
