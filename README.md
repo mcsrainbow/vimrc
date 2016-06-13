@@ -2,8 +2,8 @@ Instruction
 ---
 1. Install packages<br>
   On CentOS:<br>
-  `sudo yum upgrade vim-common vim-minimal`<br>
   `sudo yum install vim git ctags`<br>
+  `sudo yum upgrade vim-common vim-minimal`<br>
   `sudo pip install pyflakes`<br>
 
   On Mac OS X:<br>
