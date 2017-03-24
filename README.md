@@ -5,7 +5,6 @@ Instruction
   `sudo yum install vim git ctags`<br>
   `sudo yum upgrade vim-common vim-minimal`<br>
   `sudo pip install pyflakes`<br>
-
   On Mac OS X:<br>
   `brew install vim`<br>
   `brew install git ctags`<br>
