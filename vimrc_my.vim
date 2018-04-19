@@ -227,7 +227,7 @@ function MyMain()
   call append(line(".")+24, "    opts = parse_opts()")
   call append(line(".")+25, "    return 0")
   call append(line(".")+26, "")
-  call append(line(".")+27, "if __name__=='__main__':")
+  call append(line(".")+27, "if __name__ == '__main__':")
   call append(line(".")+28, "    sys.exit(main())")
 endf
 
