@@ -13,12 +13,11 @@ https://github.com/chriskempson/base16-vim
 
 ### 1. Install packages
 
-#### On CentOS:
+#### On CentOS 7:
 
 ```
-sudo yum install vim git ctags
+sudo yum install vim git ctags pyflakes
 sudo yum upgrade vim-common vim-minimal
-sudo pip install pyflakes
 ```
 
 #### On macOS:
