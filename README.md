@@ -49,3 +49,9 @@ vim +PluginClean +qall
 ## Screenshot
 
 ![image](screenshot.png)
+
+### 7. If you just want a vimrc with better settings and no any plugin, use `vimrc_tiny.vim` instead
+
+```
+wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
+```
