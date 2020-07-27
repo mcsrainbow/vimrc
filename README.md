@@ -1,3 +1,11 @@
+## Tips
+
+#### 1. For users who just want a vimrc without any plugin, use `vimrc_tiny.vim` instead
+
+```
+wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
+```
+
 ## Instruction
 
 ### 1. Install packages
@@ -49,9 +57,3 @@ vim +PluginClean +qall
 ## Screenshot
 
 ![image](screenshot.png)
-
-### 7. For users who just want a vimrc without any plugin, use `vimrc_tiny.vim` instead
-
-```
-wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
-```
