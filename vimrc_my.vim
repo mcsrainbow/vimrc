@@ -18,7 +18,6 @@ Plugin 'scrooloose/nerdtree'           "NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'       "NERDTree Tabs
 Plugin 'fholgado/minibufexpl.vim'      "MiniBufExpl
 Plugin 'vim-scripts/taglist.vim'       "Based on ctags
-Plugin 'mitsuhiko/vim-python-combined' "Better combined Python
 Plugin 'vim-scripts/pyflakes'          "Pyflakes
 Plugin 'davidhalter/jedi-vim'          "Jedi Python autocompletion
 Plugin 'pearofducks/ansible-vim'       "Ansible syntax
