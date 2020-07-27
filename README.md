@@ -13,7 +13,7 @@ https://github.com/chriskempson/base16-vim
 
 ### 1. Install packages
 
-#### On CentOS 7:
+#### On CentOS:
 
 ```
 sudo yum install vim git ctags pyflakes
