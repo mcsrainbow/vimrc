@@ -11,7 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "Use Vundle to manage itself
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "Use Vundle to manage VIM plugins which on GitHub(optional)
 Plugin 'scrooloose/nerdtree'           "NERDTree
