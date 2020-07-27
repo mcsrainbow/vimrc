@@ -36,8 +36,8 @@ filetype plugin indent on
 
 "Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"colorscheme inkpot               "Use inkpot color scheme
-colorscheme vivify-inkpot          "Use vivify-inkpot color scheme
+"colorscheme inkpot                "Use inkpot color scheme
+colorscheme vivify-inkpot         "Use vivify-inkpot color scheme
 "colorscheme jellybeans            "Use jellybeans color scheme
 "colorscheme base16-default-dark   "Use base16 color scheme
 "colorscheme solarized             "Use solarized color scheme
