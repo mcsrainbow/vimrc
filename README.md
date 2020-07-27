@@ -6,6 +6,8 @@
 wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
 ```
 
+### 2. For `solarized` and `base16` color schemes, check out their source GitHub repositories for advanced usage
+
 ## Instruction
 
 ### 1. Install packages
