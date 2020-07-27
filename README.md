@@ -15,7 +15,7 @@ https://github.com/chriskempson/base16-vim
 
 ### 1. Install packages
 
-#### on Ubuntu:
+#### On Ubuntu:
 
 ```
 sudo apt install vim git ctags pyflakes
