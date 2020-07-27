@@ -91,7 +91,7 @@ set listchars=tab:\|\ ,
 syntax enable                "打开语法高亮
 syntax on                    "开启文件类型侦测
 
-"每行超过80个的字符用下划线标示
+"每行超过80个的字符用下划线标示(默认禁用)
 "au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
 
 "自定义状态栏显示(文件名称,文件格式,文件类型,光标字符ASCII与16进制值,光标所在行号和列号,文件总行数)
