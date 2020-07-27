@@ -18,7 +18,6 @@ Plugin 'scrooloose/nerdtree'           "树形目录
 Plugin 'jistr/vim-nerdtree-tabs'       "为树形目录提供Tab支持
 Plugin 'fholgado/minibufexpl.vim'      "多文件编辑
 Plugin 'vim-scripts/taglist.vim'       "基于ctags的代码Tag浏览
-Plugin 'mitsuhiko/vim-python-combined' "更好的Python支持
 Plugin 'vim-scripts/pyflakes'          "实时检查python代码语法
 Plugin 'davidhalter/jedi-vim'          "Jedi Python语法结构自动补全
 
