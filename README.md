@@ -1,31 +1,49 @@
-Instruction
----
-1. Install packages<br>
-  On CentOS:<br>
-  `sudo yum install vim git ctags`<br>
-  `sudo yum upgrade vim-common vim-minimal`<br>
-  `sudo pip install pyflakes`<br>
-  On Mac OS X:<br>
-  `brew install vim`<br>
-  `brew install git ctags`<br>
-  `pip install pyflakes`<br>
+## Instruction
 
-2. Install Vundle package<br>
-  `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`<br>
+### 1. Install packages
 
-3. Copy the configuration file<br>
-  `git clone https://github.com/mcsrainbow/vimrc`<br>
-  `cd vimrc`<br>
-  `cp vimrc ~/.vimrc`<br>
+#### On CentOS:
 
-4. Install Plugins<br>
-  `vim +PluginInstall +qall`<br>
+```
+sudo yum install vim git ctags
+sudo yum upgrade vim-common vim-minimal
+sudo pip install pyflakes
+```
 
-5. Comment out Plugins in .vimrc then Remove Plugins<br>
-  `vim +PluginClean +qall`<br>
+#### On Mac OS X:
 
-6. Turn on/off paste-mode by **F6** to paste code without auto-indent and auto-complete<br>
+```
+brew install vim
+brew install git ctags
+pip install pyflakes
+```
 
-Screenshot
----
+### 2. Install Vundle package
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+### 3. Copy the configuration file
+
+```
+git clone https://github.com/mcsrainbow/vimrc
+cd vimrc
+cp vimrc ~/.vimrc
+```
+
+### 4. Install Plugins
+
+```
+vim +PluginInstall +qall
+```
+
+### 5. Comment out Plugins in .vimrc then Remove Plugins
+
+```
+vim +PluginClean +qall
+```
+
+### 6. Turn on/off paste-mode by `F6` to paste code without auto-indent and auto-complete
+
+## Screenshot
+
 ![image](screenshot.png)
