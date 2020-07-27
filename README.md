@@ -1,5 +1,11 @@
 ## Instruction
 
+### 0. If you just want a vimrc with better settings and no any plugin, use `vimrc_tiny.vim` instead
+
+```
+wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
+```
+
 ### 1. Install packages
 
 #### On CentOS:
@@ -10,7 +16,7 @@ sudo yum upgrade vim-common vim-minimal
 sudo pip install pyflakes
 ```
 
-#### On Mac OS X:
+#### On macOS:
 
 ```
 brew install vim
@@ -49,9 +55,3 @@ vim +PluginClean +qall
 ## Screenshot
 
 ![image](screenshot.png)
-
-### 7. If you just want a vimrc with better settings and no any plugin, use `vimrc_tiny.vim` instead
-
-```
-wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
-```
