@@ -1,12 +1,12 @@
 ### Tips
 
-#### 1. For users who just want a vimrc without any plugin, use `vimrc_tiny.vim` instead
+#### For users who just want a vimrc without any plugin, use `vimrc_tiny.vim` instead
 
 ```
 wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
 ```
 
-#### 2. For `solarized` and `base16` color schemes, check out their source GitHub repositories for advanced usage
+#### For `solarized` and `base16` color schemes, check out their source GitHub repositories for advanced usage
 
 ## Instruction
 
