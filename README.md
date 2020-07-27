@@ -32,7 +32,7 @@ pip install pyflakes
 ### 2. Install Vundle package
 
 ```
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 ### 3. Copy the configuration file
