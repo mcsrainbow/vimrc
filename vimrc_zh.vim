@@ -24,7 +24,7 @@ Plugin 'davidhalter/jedi-vim'          "Jedi Python语法结构自动补全
 
 "使用Vundle下载位于GitHub上的配色模式,由http://cocopon.me/app/vim-color-gallery/推荐(根据个人喜好进行选择)
 Plugin 'ciaranm/inkpot'                    "inkpot配色模式
-Plugin 'nanotech/jellybeans.vim'           "jellybeans配色模式
+"Plugin 'nanotech/jellybeans.vim'           "jellybeans配色模式
 "Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night配色模式
 "Plugin 'altercation/vim-colors-solarized'  "solarized配色模式
 
@@ -92,7 +92,7 @@ syntax enable                "打开语法高亮
 syntax on                    "开启文件类型侦测
 
 "每行超过80个的字符用下划线标示
-au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
+"au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
 
 "自定义状态栏显示(文件名称,文件格式,文件类型,光标字符ASCII与16进制值,光标所在行号和列号,文件总行数)
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
