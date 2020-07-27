@@ -25,6 +25,7 @@ Plugin 'pearofducks/ansible-vim'       "Ansible syntax
 
 "Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/(optional)
 Plugin 'ciaranm/inkpot'                    "inkpot color scheme
+Plugin 'mcsrainbow/vivify-inkpot'          "vivify-inkpot color scheme
 Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme
 Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night color scheme
 Plugin 'altercation/vim-colors-solarized'  "solarized color scheme
@@ -37,9 +38,10 @@ filetype plugin indent on
 "Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme inkpot           "Use inkpot color scheme
+colorscheme vivify-inkpot    "Use vivify-inkpot color scheme
 "colorscheme jellybeans       "Use jellybeans color scheme
 "colorscheme Tomorrow-Night   "Use Tomorrow Night color scheme
-colorscheme solarized        "Use solarized color scheme
+"colorscheme solarized        "Use solarized color scheme
 set background=dark          "Use dark background color for terminal
 set history=400              "The command-lines that you enter are remembered in a history table
 set expandtab                "Use spaces instead of tabs
@@ -87,7 +89,7 @@ syntax enable
 syntax on
 
 "Underline the characters at column 80
-au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
+"au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
 
 "Customize the status line
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -177,7 +179,7 @@ function CreateInfo()
   call append(1, "#-*- coding:utf-8 -*-")
   call append(2, "")
   call append(3, "# Description: ")
-  call append(4, "# Author: Dong Guo")
+  call append(4, "# Author: Damon Guo")
   call append(5, "# Last modified: ".strftime("%F %H:%M %Z"))
   call append(6, "")
 endf
