@@ -27,7 +27,7 @@ Plugin 'pearofducks/ansible-vim'       "Ansible syntax
 Plugin 'ciaranm/inkpot'                    "inkpot color scheme
 Plugin 'mcsrainbow/vivify-inkpot'          "vivify-inkpot color scheme
 Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme
-Plugin 'chriskempson/vim-tomorrow-theme'   "Tomorrow Night color scheme
+Plugin 'chriskempson/base16-vim'           "base16 color scheme
 Plugin 'altercation/vim-colors-solarized'  "solarized color scheme
 
 "Vundle END
@@ -37,11 +37,11 @@ filetype plugin indent on
 
 "Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"colorscheme inkpot           "Use inkpot color scheme
-colorscheme vivify-inkpot    "Use vivify-inkpot color scheme
-"colorscheme jellybeans       "Use jellybeans color scheme
-"colorscheme Tomorrow-Night   "Use Tomorrow Night color scheme
-"colorscheme solarized        "Use solarized color scheme
+"colorscheme inkpot               "Use inkpot color scheme
+colorscheme vivify-inkpot          "Use vivify-inkpot color scheme
+"colorscheme jellybeans            "Use jellybeans color scheme
+"colorscheme base16-default-dark   "Use base16 color scheme
+"colorscheme solarized             "Use solarized color scheme
 set background=dark          "Use dark background color for terminal
 set history=400              "The command-lines that you enter are remembered in a history table
 set expandtab                "Use spaces instead of tabs
