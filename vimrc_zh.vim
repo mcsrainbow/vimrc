@@ -11,7 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "使用Vundle管理自身插件
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "使用Vundle管理位于GitHub上的插件(可选)
 Plugin 'scrooloose/nerdtree'           "树形目录
