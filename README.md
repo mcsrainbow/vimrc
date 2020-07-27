@@ -29,8 +29,7 @@ sudo yum upgrade vim-common vim-minimal
 #### On macOS:
 
 ```
-brew install vim
-brew install git ctags
+brew install vim git ctags
 pip install pyflakes
 ```
 
