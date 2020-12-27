@@ -2,7 +2,7 @@
 
 ```bash
 # For users who want a vimrc without any plugin, use "vimrc_tiny.vim" instead:
-wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -o ~/.vimrc
+wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -O ~/.vimrc
 
 # For "solarized" and "base16" color schemes, check out their source repositories for advanced usage:
 https://github.com/altercation/vim-colors-solarized
