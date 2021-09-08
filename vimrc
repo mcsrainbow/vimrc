@@ -68,6 +68,7 @@ set nowrap                   "Do not wrap lines
 "set noswapfile               "Do not use a swapfile for the buffer
 "set autochdir                "Change the current working directory
 "set equalalways              "Makes all the windows the same size after a window is split or closed
+"set maxmempattern=2000000    "Maximum amount of memory (in Kbyte) to use for pattern matching
 
 "Change the indentation behavior based on the file type
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
