@@ -75,6 +75,8 @@ set nowrap                   "不自动换行
 "set noswapfile               "编辑时不产生交换文件
 "set autochdir                "自动切换当前目录为文件所在的目录
 "set equalalways              "分割窗口时保持相等的宽和高
+set maxmempattern=2000000    "将字符串匹配的可用内存设置为最大
+set backupcopy=yes           "避免在保存时更改文件的inode信息
 
 "针对文件类型使用特定的缩进与Tab键宽度
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
