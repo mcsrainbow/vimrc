@@ -137,6 +137,11 @@ autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 "通过快捷键<F6>开关粘贴模式临时关闭自动缩进与自动完成等功能方便从外部复制代码
 set pastetoggle=<F6>
 
+"打开文件时光标自动跳转到上次退出位置
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 "MiniBufExpl多文件编辑
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1   
