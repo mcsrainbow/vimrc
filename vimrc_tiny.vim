@@ -66,6 +66,11 @@ language messages en_US.utf-8
 "Turn on/off paste-mode by <F6> to paste code without auto-indent and auto-complete
 set pastetoggle=<F6>
 
+"Uncomment the following to have Vim jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 ""Map auto complete of (), {}, [], <>, "", '', `` (optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :inoremap ( ()<ESC>i
@@ -92,8 +97,3 @@ function ClosePair(char)
     return a:char
   endif
 endf
-
-"Uncomment the following to have Vim jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
