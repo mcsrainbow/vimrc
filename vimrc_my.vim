@@ -140,16 +140,16 @@ autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 "Turn on/off paste-mode by <F6> to paste code without auto-indent and auto-complete
 set pastetoggle=<F6>
 
+"Uncomment the following to have Vim jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 "MiniBufExpl
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1   
 let g:miniBufExplMapCTabSwitchBufs = 1   
 let g:miniBufExplModSelTarget = 1 
-
-"Uncomment the following to have Vim jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
 
 ""Map auto complete of (), {}, [], <>, "", '', ``(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
