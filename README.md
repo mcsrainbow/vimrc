@@ -2,7 +2,7 @@
 
 **For users who want a vimrc without any plugin, use** `vimrc_tiny.vim` **instead:**
 
-```
+```bash
 wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -O ~/.vimrc
 ```
 
