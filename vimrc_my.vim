@@ -140,6 +140,10 @@ autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 "Turn on/off paste-mode by <F6> to paste code without auto-indent and auto-complete
 set pastetoggle=<F6>
 
+"Show extra spaces (including Tab keys) at the end of a line as visible small squares
+set listchars=tab:»■,trail:■
+set list
+
 "Jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
