@@ -8,7 +8,7 @@ wget https://raw.githubusercontent.com/mcsrainbow/vimrc/master/vimrc_tiny.vim -O
 
 **For** `solarized` **and** `base16` **color schemes, check out their source repositories for advanced usage:**
 
-https://github.com/altercation/vim-colors-solarized
+https://github.com/altercation/vim-colors-solarized  
 https://github.com/chriskempson/base16-vim
 
 **For users who want to remove all, just delete the** `~/.vimrc` **and directory** `~/.vim`
