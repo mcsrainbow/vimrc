@@ -46,7 +46,7 @@ colorscheme inkpot                "启用inkpot配色模式(根据个人喜好�
 "colorscheme base16-default-dark   "启用base16配色模式(根据个人喜好进行选择)
 "colorscheme solarized             "启用solarized配色模式(根据个人喜好进行选择)
 set background=dark          "使用较暗的背景色
-set history=400              "增加历史操作命令条数，默认20
+set history=600              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
 set tabstop=4                "设置Tab键的宽度为4个空格
 "set smarttab                 "智能使用Tab键

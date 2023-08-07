@@ -39,7 +39,7 @@ colorscheme inkpot                "Use inkpot color scheme
 "colorscheme base16-default-dark   "Use base16 color scheme
 "colorscheme solarized             "Use solarized color scheme
 set background=dark          "Use dark background color for terminal
-set history=400              "The command-lines that you enter are remembered in a history table
+set history=600              "The command-lines that you enter are remembered in a history table
 set expandtab                "Use spaces instead of tabs
 set tabstop=4                "1 tab == 4 spaces
 "set smarttab                 "Be smart when <Tab> in front of a line inserts blanks
