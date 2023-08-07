@@ -140,6 +140,9 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+":W sudo saves the file to handle the permission-denied error
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
 "MiniBufExpl
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1   

@@ -146,6 +146,10 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+":W sudo saves the file to handle the permission-denied error
+":W冒号加大写W通过sudo保存没有写权限的文件
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
 "MiniBufExpl多文件编辑
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1   
