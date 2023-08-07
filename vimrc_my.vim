@@ -52,19 +52,18 @@ set autoindent               "Copy indent from current line when starting a new 
 "set nu                       "Show line numbers
 set showmatch                "Show matching brackets when text indicator is over them
 "set mouse=a                  "Enable the use of the mouse
-"set ruler                    "Always show current position
-"set incsearch                "Makes search act like search in modern browsers
+set ruler                    "Always show current position
+set incsearch                "Makes search act like search in modern browsers
 set hlsearch                 "Highlight search results
 "set smartcase                "When searching try to be smart about cases
 "set ignorecase               "Ignore case when searching
 "set nowrapscan               "Do not wrap around when searching
-set vb t_vb=                 "Turn off visual bell
 set cursorline               "Highlight the current line
-"set cursorcolumn             "Highlight the current column
+set cursorcolumn             "Highlight the current column
 set hidden                   "A buffer becomes hidden when it is abandoned
 "set wildmenu                 "Turn on the wild menu
-"set cmdheight=2              "Number of screen lines to use for the command-line
-"set autoread                 "Set to auto read when a file is changed from the outside
+"set cmdheight=1              "Number of screen lines to use for the command-line
+"set foldcolumn=1             "Add a bit extra margin to the left
 "set autowrite                "Auto saves changes when quitting and swiching buffer
 set nowrap                   "Do not wrap lines
 "set backup                   "Keep a backup file with suffix ~
@@ -74,16 +73,22 @@ set nowrap                   "Do not wrap lines
 set maxmempattern=2000000    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
 set backupcopy=yes           "Avoid the inode value changes
 
+"Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * checktime
+
+"Turn off annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
 "Change the indentation behavior based on the file type
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
 
 "Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
-"Display unprintable characters: <Tab> as |
-set list
-set listchars=tab:\|\ ,
 
 "Enable syntax highlighting
 syntax enable
@@ -94,7 +99,7 @@ syntax on
 
 "Customize the status line
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"set laststatus=2             "Always show status line
+set laststatus=2             "Always show status line
 
 "Automatic detection will be done when reading a file
 set fileformats=unix,dos,mac
@@ -106,6 +111,21 @@ set fileencodings=utf-8,gbk,cp936,latin-1
 
 "Set the current language
 language messages en_US.utf-8
+
+"Turn on/off paste-mode by <F6> to paste code without auto-indent and auto-complete
+set pastetoggle=<F6>
+
+"Show extra spaces at the end of a line and unprintable Tab characters as visible small squares
+set listchars=tab:\|\■,trail:■
+set list
+
+"Jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+":W sudo saves the file to handle the permission-denied error
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 ""Plugins(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,21 +156,6 @@ nnoremap <silent> <F8> <C-W>w
 
 "Map Pyflakes to <F7>
 autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
-
-"Turn on/off paste-mode by <F6> to paste code without auto-indent and auto-complete
-set pastetoggle=<F6>
-
-"Show extra spaces (including Tab keys) at the end of a line as visible small squares
-set listchars=tab:»■,trail:■
-set list
-
-"Jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-":W sudo saves the file to handle the permission-denied error
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 "MiniBufExpl
 let g:miniBufExplMapWindowNavVim = 1

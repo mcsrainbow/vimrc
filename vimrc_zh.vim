@@ -56,19 +56,18 @@ set autoindent               "自动缩进
 "set nu                       "显示行号
 set showmatch                "显示括号配对情况
 "set mouse=a                  "启用鼠标
-"set ruler                    "启用状态栏标尺
-"set incsearch                "开启实时搜索功能
+set ruler                    "启用状态栏标尺
+set incsearch                "开启实时搜索功能
 set hlsearch                 "开启高亮显示搜索结果
 "set smartcase                "开启智能大小写搜索
 "set ignorecase               "搜索时忽略大小写
 "set nowrapscan               "搜索到文件两端时不重新搜索
-set vb t_vb=                 "关闭提示音
 set cursorline               "突出显示当前行
 "set cursorcolumn             "突出显示当前列
 set hidden                   "允许在有未保存的修改时切换缓冲区
 "set wildmenu                 "启动增强模式下的命令行自动完成
-"set cmdheight=2              "设置命令行高度
-"set autoread                 "自动读取被外部修改的文件内容
+"set cmdheight=1              "设置命令行高度
+"set foldcolumn=1             "增加左侧边距
 "set autowrite                "开启自动保存
 set nowrap                   "不自动换行
 "set backup                   "自动备份修改前的文件为源文件名加~
@@ -78,6 +77,16 @@ set nowrap                   "不自动换行
 set maxmempattern=2000000    "将字符串匹配的可用内存设置为最大
 set backupcopy=yes           "避免在保存时更改文件的inode信息
 
+"自动读取被外部修改的文件内容
+set autoread
+au FocusGained,BufEnter * checktime
+
+"关闭错误提示音
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
 "针对文件类型使用特定的缩进与Tab键宽度
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
 
@@ -85,21 +94,19 @@ autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tab
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-"显示Tab符并使用高亮竖线代替
-set list
-set listchars=tab:\|\ ,
-
-syntax enable                "打开语法高亮
-syntax on                    "开启文件类型侦测
+"打开语法高亮和文件类型侦测
+syntax enable
+syntax on
 
 "每行超过80个的字符用下划线标示(默认禁用)
 "au BufRead,BufNewFile *.c,*.cpp,*.java,*.cs,*.sh,*.lua,*.pl,*.py,*.rb,*.erb,*.vim 2match Underlined /.\%81v/
 
 "自定义状态栏显示(文件名称,文件格式,文件类型,光标字符ASCII与16进制值,光标所在行号和列号,文件总行数)
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"set laststatus=2             "总是显示状态栏
+set laststatus=2             "总是显示状态栏
 
-set fileformats=unix,dos,mac "自动识别文件格式
+"自动识别文件格式
+set fileformats=unix,dos,mac
 
 "设置默认编码
 set fenc=utf-8
@@ -109,6 +116,21 @@ set fileencodings=utf-8,gbk,cp936,latin-1
 "解决Consle乱码输出问题
 "language messages en_US.utf-8
 language messages zh_CN.utf-8
+
+"通过快捷键<F6>开关粘贴模式临时关闭自动缩进与自动完成等功能方便从外部复制代码
+set pastetoggle=<F6>
+
+"用小方块显示Tab符号和行尾多余的空格
+set listchars=tab:\|\■,trail:■
+set list
+
+"打开文件时光标自动跳转到上次退出位置
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+":W 使用冒号加大写W sudo保存没有写权限的文件
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 ""插件配置(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,27 +156,11 @@ nnoremap <silent> <F8> <C-W>w
 "通过快捷键<F7>启用Pyflakes
 autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
 
-"通过快捷键<F6>开关粘贴模式临时关闭自动缩进与自动完成等功能方便从外部复制代码
-set pastetoggle=<F6>
-
-"用小方块显示行尾多余的空格和Tab符号
-set listchars=tab:»■,trail:■
-set list
-
-"打开文件时光标自动跳转到上次退出位置
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-":W sudo saves the file to handle the permission-denied error
-":W冒号加大写W通过sudo保存没有写权限的文件
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-
 "MiniBufExpl多文件编辑
 let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1   
-let g:miniBufExplMapCTabSwitchBufs = 1   
-let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 
 ""引号,括号自动匹配(可选)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
