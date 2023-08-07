@@ -34,7 +34,7 @@ call vundle#end()
 "Turn on plugins
 filetype plugin indent on
 
-"Options(optional)
+""Options(optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme inkpot                "Use inkpot color scheme
 colorscheme vivify-inkpot         "Use vivify-inkpot color scheme

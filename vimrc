@@ -32,7 +32,7 @@ call vundle#end()
 "Turn on plugins
 filetype plugin indent on
 
-"Options (optional)
+""Options (optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot                "Use inkpot color scheme
 "colorscheme jellybeans            "Use jellybeans color scheme

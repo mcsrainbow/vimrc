@@ -1,4 +1,4 @@
-"Options (optional)
+""Options (optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark          "Use dark background color for terminal
 set history=600              "The command-lines that you enter are remembered in a history table
