@@ -13,7 +13,7 @@ https://github.com/chriskempson/base16-vim
 
 #### For users who want to remove all, just delete the `~/.vimrc` and directory `~/.vim`
 
-#### Inspired by
+#### Inspired by:
 
 https://github.com/amix/vimrc
 
