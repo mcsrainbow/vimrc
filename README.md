@@ -13,7 +13,7 @@ https://github.com/altercation/vim-colors-solarized
 https://github.com/chriskempson/base16-vim
 ```
 
-##### For users who want to remove all, just delete the `~/.vimrc` and `~/.vim` directory
+##### For users who want to remove all, just delete the `~/.vimrc` and directory `~/.vim`
 
 ## Instruction
 
