@@ -24,7 +24,6 @@ Plugin 'davidhalter/jedi-vim'          "Jedi Python autocompletion
 "Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/(optional)
 Plugin 'ciaranm/inkpot'                    "inkpot color scheme
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme
-"Plugin 'chriskempson/base16-vim'           "base16 color scheme
 "Plugin 'altercation/vim-colors-solarized'  "solarized color scheme
 
 "Vundle END
@@ -36,7 +35,6 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot                "Use inkpot color scheme
 "colorscheme jellybeans            "Use jellybeans color scheme
-"colorscheme base16-default-dark   "Use base16 color scheme
 "colorscheme solarized             "Use solarized color scheme
 set background=dark          "Use dark background color for terminal
 set history=600              "The command-lines that you enter are remembered in a history table

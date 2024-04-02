@@ -24,7 +24,6 @@ Plugin 'davidhalter/jedi-vim'          "Jedi Python语法结构自动补全
 "使用Vundle下载位于GitHub上的配色模式,由http://cocopon.me/app/vim-color-gallery/推荐(根据个人喜好进行选择)
 Plugin 'ciaranm/inkpot'                    "inkpot配色模式
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans配色模式
-"Plugin 'chriskempson/base16-vim'           "base16配色模式
 "Plugin 'altercation/vim-colors-solarized'  "solarized配色模式
 
 "Vundle插件管理区域结束标签
@@ -43,7 +42,6 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot                "启用inkpot配色模式(根据个人喜好进行选择)
 "colorscheme jellybeans            "启用jellybeans配色模式(根据个人喜好进行选择)
-"colorscheme base16-default-dark   "启用base16配色模式(根据个人喜好进行选择)
 "colorscheme solarized             "启用solarized配色模式(根据个人喜好进行选择)
 set background=dark          "使用较暗的背景色
 set history=600              "增加历史操作命令条数，默认20
