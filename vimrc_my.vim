@@ -83,8 +83,8 @@ set tm=500
 
 "Change the indentation behavior based on the file type
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType make setlocal noexpandtab tabstop=4 shiftwidth=4
 autocmd FileType go setlocal noexpandtab tabstop=8 shiftwidth=8
-autocmd FileType make setlocal noexpandtab
 
 "Configure backspace so it acts as it should act
 set backspace=eol,start,indent
