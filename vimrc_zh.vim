@@ -87,8 +87,7 @@ set tm=500
 
 "针对文件类型使用特定的缩进与Tab键宽度
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
-autocmd FileType make setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType go setlocal noexpandtab tabstop=8 shiftwidth=8
+autocmd FileType make,go setlocal noexpandtab tabstop=8 shiftwidth=8
 
 "启用并优化退格键的行为
 set backspace=eol,start,indent
