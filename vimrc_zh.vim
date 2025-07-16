@@ -71,7 +71,8 @@ set nowrap                   "不自动换行
 "set backup                   "自动备份修改前的文件为源文件名加~
 "set noswapfile               "编辑时不产生交换文件
 "set autochdir                "自动切换当前目录为文件所在的目录
-"set equalalways              "分割窗口时保持相等的宽和高
+set equalalways              "分割窗口时保持相等的宽和高
+set splitright               "分割窗口时新窗口显示在右边
 set maxmempattern=2000000    "将字符串匹配的可用内存设置为最大
 set backupcopy=yes           "避免在保存时更改文件的inode信息
 

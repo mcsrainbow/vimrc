@@ -67,7 +67,8 @@ set nowrap                   "Do not wrap lines
 "set backup                   "Keep a backup file with suffix ~
 "set noswapfile               "Do not use a swapfile for the buffer
 "set autochdir                "Change the current working directory
-"set equalalways              "Makes all the windows the same size after a window is split or closed
+set equalalways              "Makes all the windows the same size after a window is split or closed
+set splitright               "Vertical splits open to the right
 set maxmempattern=2000000    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
 set backupcopy=yes           "Avoid the inode value changes
 
