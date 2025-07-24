@@ -13,7 +13,7 @@ call vundle#begin()
 "Use Vundle to manage itself
 Plugin 'VundleVim/Vundle.vim'
 
-"Use Vundle to manage VIM plugins which on GitHub(optional)
+"Use Vundle to manage VIM plugins which on GitHub
 Plugin 'scrooloose/nerdtree'           "NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'       "NERDTree Tabs
 Plugin 'fholgado/minibufexpl.vim'      "MiniBufExpl
@@ -21,7 +21,7 @@ Plugin 'vim-scripts/taglist.vim'       "Based on ctags
 Plugin 'vim-scripts/pyflakes'          "Pyflakes
 Plugin 'davidhalter/jedi-vim'          "Jedi Python autocompletion
 
-"Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/(optional)
+"Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/
 Plugin 'ciaranm/inkpot'                    "inkpot color scheme
 "Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme
 "Plugin 'altercation/vim-colors-solarized'  "solarized color scheme
@@ -31,7 +31,7 @@ call vundle#end()
 "Turn on plugins
 filetype plugin indent on
 
-""Options (optional)
+""Options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot                "Use inkpot color scheme
 "colorscheme jellybeans            "Use jellybeans color scheme
@@ -66,7 +66,7 @@ set nowrap                   "Do not wrap lines
 "set autochdir                "Change the current working directory
 set equalalways              "Makes all the windows the same size after a window is split or closed
 set splitright               "Vertical splits open to the right
-set maxmempattern=2000000    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
+set maxmempattern=2097152    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
 set backupcopy=yes           "Avoid the inode value changes
 
 "Set to auto read when a file is changed from the outside
@@ -124,7 +124,7 @@ endif
 ":W sudo saves the file to handle the permission-denied error
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-""Plugins(optional)
+""Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Taglist
 let Tlist_Use_Right_Window = 1
@@ -154,7 +154,26 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
-""Map auto complete of (), {}, [], <>, "", '', `` (optional)
+""Disable syntax highlighting to avoid lag from rendering long base64-like string
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function DisableSyntaxIfLongBase64Like()
+  let max_lines = min([line('$'), 1000])
+  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
+
+  for lnum in range(1, max_lines)
+    if match(getline(lnum), base64_pattern) >= 0
+      setlocal syntax=off
+      echohl ErrorMsg
+      echon "Syntax highlighting disabled: To avoid lag from rendering long base64-like string on line " . lnum
+      echohl None
+      break
+    endif
+  endfor
+endfunction
+
+autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()
+
+""Map auto complete of (), {}, [], <>, "", '', ``
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
@@ -179,4 +198,4 @@ function ClosePair(char)
   else
     return a:char
   endif
-endf
+endfunction

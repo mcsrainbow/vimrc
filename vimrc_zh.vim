@@ -13,7 +13,7 @@ call vundle#begin()
 "使用Vundle管理自身插件
 Plugin 'VundleVim/Vundle.vim'
 
-"使用Vundle管理位于GitHub上的插件(可选)
+"使用Vundle管理位于GitHub上的插件
 Plugin 'scrooloose/nerdtree'           "树形目录
 Plugin 'jistr/vim-nerdtree-tabs'       "为树形目录提供Tab支持
 Plugin 'fholgado/minibufexpl.vim'      "多文件编辑
@@ -38,7 +38,7 @@ filetype plugin indent on
 "CTRL+v                       "块编辑模式[删除x][插入I][退出ESC]
 "CTRL+x CTRL+f                "文件路径补全
 
-""配置选项(可选)
+""配置选项
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme inkpot                "启用inkpot配色模式(根据个人喜好进行选择)
 "colorscheme jellybeans            "启用jellybeans配色模式(根据个人喜好进行选择)
@@ -73,7 +73,7 @@ set nowrap                   "不自动换行
 "set autochdir                "自动切换当前目录为文件所在的目录
 set equalalways              "分割窗口时保持相等的宽和高
 set splitright               "分割窗口时新窗口显示在右边
-set maxmempattern=2000000    "将字符串匹配的可用内存设置为最大
+set maxmempattern=2097152    "将字符串匹配的可用内存设置为2GiB
 set backupcopy=yes           "避免在保存时更改文件的inode信息
 
 "自动读取被外部修改的文件内容
@@ -132,7 +132,7 @@ endif
 ":W 使用冒号加大写W sudo保存没有写权限的文件
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-""插件配置(可选)
+""插件配置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Taglist
 let Tlist_Use_Right_Window = 1                 "在右侧窗口中显示
@@ -162,7 +162,26 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
-""引号,括号自动匹配(可选)
+""关闭语法高亮避免因渲染超长base64-like字符串导致卡顿
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! DisableSyntaxIfLongBase64Like()
+  let max_lines = min([line('$'), 1000])
+  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
+
+  for lnum in range(1, max_lines)
+    if match(getline(lnum), base64_pattern) >= 0
+      setlocal syntax=off
+      echohl ErrorMsg
+      echon "语法高亮已关闭: 避免因渲染第" . lnum . "行超长base64-like字符串导致卡顿"
+      echohl None
+      break
+    endif
+  endfor
+endfunction
+
+autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()
+
+""引号,括号自动匹配
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
@@ -187,4 +206,4 @@ function ClosePair(char)
   else
     return a:char
   endif
-endf
+endfunction

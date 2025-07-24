@@ -1,4 +1,4 @@
-""Options (optional)
+""Options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark          "Use dark background color for terminal
 set history=600              "The command-lines that you enter are remembered in a history table
@@ -30,7 +30,7 @@ set nowrap                   "Do not wrap lines
 "set autochdir                "Change the current working directory
 set equalalways              "Makes all the windows the same size after a window is split or closed
 set splitright               "Vertical splits open to the right
-set maxmempattern=2000000    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
+set maxmempattern=2097152    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
 set backupcopy=yes           "Avoid the inode value changes
 
 "Set to auto read when a file is changed from the outside
@@ -88,7 +88,26 @@ endif
 ":W sudo saves the file to handle the permission-denied error
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-""Map auto complete of (), {}, [], <>, "", '', `` (optional)
+""Disable syntax highlighting to avoid lag from rendering long base64-like string
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function DisableSyntaxIfLongBase64Like()
+  let max_lines = min([line('$'), 1000])
+  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
+
+  for lnum in range(1, max_lines)
+    if match(getline(lnum), base64_pattern) >= 0
+      setlocal syntax=off
+      echohl ErrorMsg
+      echon "Syntax highlighting disabled: To avoid lag from rendering long base64-like string on line " . lnum
+      echohl None
+      break
+    endif
+  endfor
+endfunction
+
+autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()
+
+""Map auto complete of (), {}, [], <>, "", '', ``
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
@@ -113,4 +132,4 @@ function ClosePair(char)
   else
     return a:char
   endif
-endf
+endfunction

@@ -13,7 +13,7 @@ call vundle#begin()
 "Use Vundle to manage itself
 Plugin 'VundleVim/Vundle.vim'
 
-"Use Vundle to manage VIM plugins which on GitHub(optional)
+"Use Vundle to manage VIM plugins which on GitHub
 Plugin 'scrooloose/nerdtree'           "NERDTree
 Plugin 'jistr/vim-nerdtree-tabs'       "NERDTree Tabs
 Plugin 'fholgado/minibufexpl.vim'      "MiniBufExpl
@@ -22,7 +22,7 @@ Plugin 'vim-scripts/pyflakes'          "Pyflakes
 Plugin 'davidhalter/jedi-vim'          "Jedi Python autocompletion
 Plugin 'pearofducks/ansible-vim'       "Ansible syntax
 
-"Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/(optional)
+"Use Vundle to download the color schemes which on GitHub, recommended by http://cocopon.me/app/vim-color-gallery/
 Plugin 'ciaranm/inkpot'                    "inkpot color scheme
 Plugin 'mcsrainbow/vivify-inkpot'          "vivify-inkpot color scheme
 Plugin 'nanotech/jellybeans.vim'           "jellybeans color scheme
@@ -33,7 +33,7 @@ call vundle#end()
 "Turn on plugins
 filetype plugin indent on
 
-""Options(optional)
+""Options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme inkpot                "Use inkpot color scheme
 colorscheme vivify-inkpot         "Use vivify-inkpot color scheme
@@ -69,7 +69,7 @@ set nowrap                   "Do not wrap lines
 "set autochdir                "Change the current working directory
 set equalalways              "Makes all the windows the same size after a window is split or closed
 set splitright               "Vertical splits open to the right
-set maxmempattern=2000000    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
+set maxmempattern=2097152    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
 set backupcopy=yes           "Avoid the inode value changes
 
 "Set to auto read when a file is changed from the outside
@@ -127,7 +127,7 @@ endif
 ":W sudo saves the file to handle the permission-denied error
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-""Plugins(optional)
+""Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Taglist
 let Tlist_Use_Right_Window = 1
@@ -163,7 +163,26 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
-""Map auto complete of (), {}, [], <>, "", '', ``(optional)
+""Disable syntax highlighting to avoid lag from rendering long base64-like string
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function DisableSyntaxIfLongBase64Like()
+  let max_lines = min([line('$'), 1000])
+  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
+
+  for lnum in range(1, max_lines)
+    if match(getline(lnum), base64_pattern) >= 0
+      setlocal syntax=off
+      echohl ErrorMsg
+      echon "Syntax highlighting disabled: To avoid lag from rendering long base64-like string on line " . lnum
+      echohl None
+      break
+    endif
+  endfor
+endfunction
+
+autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()
+
+""Map auto complete of (), {}, [], <>, "", '', ``
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
@@ -188,68 +207,4 @@ function ClosePair(char)
   else
     return a:char
   endif
-endf
-
-""Custom functions(optional)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function CreateInfo()
-  call append(0, "#!/usr/bin/env python")
-  call append(1, "#-*- coding:utf-8 -*-")
-  call append(2, "")
-  call append(3, "# Description: ")
-  call append(4, "# Author: Damon Guo")
-  call append(5, "# Last modified: ".strftime("%F %H:%M %Z"))
-  call append(6, "")
-endf
-
-function UpdateInfo()
-  execute '/# *Last modified:/s@:.*$@\=strftime(": %F %H:%M %Z")'
-endf
-
-function MyInfo()
-  let n = 1
-  while n < 10
-    let line = getline(n)
-    if line =~ '^\#\s*\S*Last\smodified:\S*.*$'
-      call UpdateInfo()
-      return
-    endif
-    let n = n + 1
-  endwhile
-  call CreateInfo()
-endf
-
-function MyMain() 
-  call append(line("."),   "import os")
-  call append(line(".")+1, "import sys")
-  call append(line(".")+2, "")
-  call append(line(".")+3, "def parse_opts():")
-  call append(line(".")+4, "    \"\"\"Help messages(-h, --help).\"\"\"")
-  call append(line(".")+5, "    ")
-  call append(line(".")+6, "    import textwrap")
-  call append(line(".")+7, "    import argparse")
-  call append(line(".")+8, "    ")
-  call append(line(".")+9, "    parser = argparse.ArgumentParser(")
-  call append(line(".")+10, "        formatter_class=argparse.RawDescriptionHelpFormatter,")
-  call append(line(".")+11, "        description=textwrap.dedent(")
-  call append(line(".")+12, "        '''")
-  call append(line(".")+13, "        '''.format(__file__)")
-  call append(line(".")+14, "        ))")
-  call append(line(".")+15, "    ")
-  call append(line(".")+16, "    args = parser.parse_args()")
-  call append(line(".")+17, "    return {}")
-  call append(line(".")+18, "")
-  call append(line(".")+19, "def main():")
-  call append(line(".")+20, "    if len(sys.argv) < 2:")
-  call append(line(".")+21, "        os.system(__file__ + ' -h')")
-  call append(line(".")+22, "        return 2")
-  call append(line(".")+23, "    ")
-  call append(line(".")+24, "    opts = parse_opts()")
-  call append(line(".")+25, "    return 0")
-  call append(line(".")+26, "")
-  call append(line(".")+27, "if __name__ == '__main__':")
-  call append(line(".")+28, "    sys.exit(main())")
-endf
-
-autocmd FileType python map <F2> <Esc>:call MyInfo()<CR><Esc>
-autocmd FileType python map <F3> <Esc>:call MyMain()<CR><Esc>
+endfunction
