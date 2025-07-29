@@ -8,8 +8,9 @@ set tabstop=4                "1 tab == 4 spaces
 set shiftwidth=4             "Number of spaces to use for each step of (auto)indent
 set autoindent               "Copy indent from current line when starting a new line
 "set smartindent              "Do smart autoindenting when starting a new line
-"set nu                       "Show line numbers
+"set number                   "Show line numbers
 set showmatch                "Show matching brackets when text indicator is over them
+set matchtime=2              "Tenths of a second to blink when matching brackets
 "set mouse=a                  "Enable the use of the mouse
 set ruler                    "Always show current position
 set incsearch                "Makes search act like search in modern browsers
@@ -18,7 +19,7 @@ set hlsearch                 "Highlight search results
 "set ignorecase               "Ignore case when searching
 "set nowrapscan               "Do not wrap around when searching
 set cursorline               "Highlight the current line
-"set cursorcolumn             "Highlight the current column
+set cursorcolumn             "Highlight the current column
 set hidden                   "A buffer becomes hidden when it is abandoned
 "set wildmenu                 "Turn on the wild menu
 "set cmdheight=1              "Number of screen lines to use for the command-line
@@ -32,6 +33,10 @@ set equalalways              "Makes all the windows the same size after a window
 set splitright               "Vertical splits open to the right
 set maxmempattern=2097152    "Set the Maximum amount of memory (in Kbyte) to use for pattern matching
 set backupcopy=yes           "Avoid the inode value changes
+set lazyredraw               "Do not redraw while executing macros for good performance
+set magic                    "Turn regular expression magic on
+set regexpengine=0           "Set regular expression engine automatically
+set scrolloff=7              "Keep 7 lines visible above and below the cursor when scrolling vertically
 
 "Set to auto read when a file is changed from the outside
 set autoread
@@ -40,8 +45,12 @@ au FocusGained,BufEnter * checktime
 "Turn off annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
-set tm=500
+set timeoutlen=500
+
+"Turn backup off
+"set nobackup       ".bak
+"set nowritebackup
+"set noswapfile     ".swp
 
 "Change the indentation behavior based on the file type
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
@@ -60,13 +69,13 @@ syntax on
 
 "Customize the status line
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set laststatus=2             "Always show status line
+set laststatus=2  "Always show status line
 
-"Automatic detection will be done when reading a file
+"Use Unix as the standard file type
 set fileformats=unix,dos,mac
 
 "Default file encoding
-set fenc=utf-8
+set fileencoding=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
@@ -87,25 +96,6 @@ endif
 
 ":W sudo saves the file to handle the permission-denied error
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-
-""Disable syntax highlighting to avoid lag from rendering long base64-like string
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function DisableSyntaxIfLongBase64Like()
-  let max_lines = min([line('$'), 1000])
-  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
-
-  for lnum in range(1, max_lines)
-    if match(getline(lnum), base64_pattern) >= 0
-      setlocal syntax=off
-      echohl ErrorMsg
-      echon "Syntax highlighting disabled: To avoid lag from rendering long base64-like string on line " . lnum
-      echohl None
-      break
-    endif
-  endfor
-endfunction
-
-autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()
 
 ""Map auto complete of (), {}, [], <>, "", '', ``
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -133,3 +123,22 @@ function ClosePair(char)
     return a:char
   endif
 endfunction
+
+""Disable syntax highlighting to avoid lag from rendering long base64-like string
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function DisableSyntaxIfLongBase64Like()
+  let max_lines = min([line('$'), 1000])
+  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
+
+  for lnum in range(1, max_lines)
+    if match(getline(lnum), base64_pattern) >= 0
+      setlocal syntax=off
+      echohl ErrorMsg
+      echon "Syntax highlighting disabled: To avoid lag from rendering long base64-like string on line " . lnum
+      echohl None
+      break
+    endif
+  endfor
+endfunction
+
+autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()

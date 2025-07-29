@@ -40,9 +40,9 @@ filetype plugin indent on
 
 ""配置选项
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme inkpot                "启用inkpot配色模式(根据个人喜好进行选择)
-"colorscheme jellybeans            "启用jellybeans配色模式(根据个人喜好进行选择)
-"colorscheme solarized             "启用solarized配色模式(根据个人喜好进行选择)
+colorscheme inkpot           "启用inkpot配色模式(根据个人喜好进行选择)
+"colorscheme jellybeans       "启用jellybeans配色模式(根据个人喜好进行选择)
+"colorscheme solarized        "启用solarized配色模式(根据个人喜好进行选择)
 set background=dark          "使用较暗的背景色
 set history=600              "增加历史操作命令条数，默认20
 set expandtab                "使用空格替换Tab符
@@ -51,8 +51,9 @@ set tabstop=4                "设置Tab键的宽度为4个空格
 set shiftwidth=4             "换行时行间交错使用4个空格
 set autoindent               "自动缩进
 "set smartindent              "智能缩进
-"set nu                       "显示行号
+"set number                   "显示行号
 set showmatch                "显示括号配对情况
+set matchtime=2              "匹配括号时闪烁2个十分之一秒
 "set mouse=a                  "启用鼠标
 set ruler                    "启用状态栏标尺
 set incsearch                "开启实时搜索功能
@@ -75,6 +76,10 @@ set equalalways              "分割窗口时保持相等的宽和高
 set splitright               "分割窗口时新窗口显示在右边
 set maxmempattern=2097152    "将字符串匹配的可用内存设置为2GiB
 set backupcopy=yes           "避免在保存时更改文件的inode信息
+set lazyredraw               "为了良好的性能在执行宏时不重绘
+set magic                    "开启正则表达式魔法
+set regexpengine=0           "自动设置正则表达式引擎
+set scrolloff=7              "滚动垂直时保持光标上下各7行可见
 
 "自动读取被外部修改的文件内容
 set autoread
@@ -83,8 +88,12 @@ au FocusGained,BufEnter * checktime
 "关闭错误提示音
 set noerrorbells
 set novisualbell
-set t_vb=
-set tm=500
+set timeoutlen=500
+
+"关闭备份
+"set nobackup       ".bak
+"set nowritebacku
+"set noswapfile     ".swp
 
 "针对文件类型使用特定的缩进与Tab键宽度
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
@@ -103,13 +112,13 @@ syntax on
 
 "自定义状态栏显示(文件名称,文件格式,文件类型,光标字符ASCII与16进制值,光标所在行号和列号,文件总行数)
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set laststatus=2             "总是显示状态栏
+set laststatus=2  "总是显示状态栏
 
-"自动识别文件格式
+"自动识别文件格式并使用Unix作为标准文件类型
 set fileformats=unix,dos,mac
 
 "设置默认编码
-set fenc=utf-8
+set fileencoding=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
@@ -162,25 +171,6 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
-""关闭语法高亮避免因渲染超长base64-like字符串导致卡顿
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! DisableSyntaxIfLongBase64Like()
-  let max_lines = min([line('$'), 1000])
-  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
-
-  for lnum in range(1, max_lines)
-    if match(getline(lnum), base64_pattern) >= 0
-      setlocal syntax=off
-      echohl ErrorMsg
-      echon "语法高亮已关闭: 避免因渲染第" . lnum . "行超长base64-like字符串导致卡顿"
-      echohl None
-      break
-    endif
-  endfor
-endfunction
-
-autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()
-
 ""引号,括号自动匹配
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :inoremap ( ()<ESC>i
@@ -207,3 +197,22 @@ function ClosePair(char)
     return a:char
   endif
 endfunction
+
+""关闭语法高亮避免因渲染超长base64-like字符串导致卡顿
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! DisableSyntaxIfLongBase64Like()
+  let max_lines = min([line('$'), 1000])
+  let base64_pattern = '[A-Za-z0-9+/=]\{256,}'
+
+  for lnum in range(1, max_lines)
+    if match(getline(lnum), base64_pattern) >= 0
+      setlocal syntax=off
+      echohl ErrorMsg
+      echon "语法高亮已关闭: 避免因渲染第" . lnum . "行超长base64-like字符串导致卡顿"
+      echohl None
+      break
+    endif
+  endfor
+endfunction
+
+autocmd BufReadPost * call DisableSyntaxIfLongBase64Like()
