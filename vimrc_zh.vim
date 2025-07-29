@@ -91,9 +91,9 @@ set novisualbell
 set timeoutlen=500
 
 "关闭备份
-"set nobackup       ".bak
+"set nobackup      ".bak
 "set nowritebacku
-"set noswapfile     ".swp
+"set noswapfile    ".swp
 
 "针对文件类型使用特定的缩进与Tab键宽度
 autocmd Filetype css,html,javascript,ruby,sh,vim,xml,yaml setlocal expandtab tabstop=2 shiftwidth=2
