@@ -60,6 +60,9 @@ autocmd FileType make,go setlocal noexpandtab tabstop=8 shiftwidth=8
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+" Enable smart indentation and language-specific features
+filetype plugin indent on
+
 "Enable syntax highlighting
 syntax enable
 syntax on
